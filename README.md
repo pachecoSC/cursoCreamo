@@ -1,2 +1,0 @@
-# cursoCreamo
-pagina_curso
