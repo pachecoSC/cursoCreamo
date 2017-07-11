@@ -86,43 +86,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</style>
 </head>
 <body>
-    
-    
-<center>
-    <h1>Lista de Cursos</h1>
-    <div class="container"><table class="table table-hover">
-            <tr>
-                <td><font>Nombre</font></td>
-                <td><font>Tipo de curso</font></td>
-                <td><font>Categoria</font></td>
-
-            </tr>    
-            <!-- @var $cursitos viene de la clase principal
-                trae el resultado de la consulta select del curso
-            -->
-            <?php 
-            if ($cursitos != NULL){
-                foreach ($cursitos as $item):
-            ?><tr>
-                <td><?Php echo $item->nombre1;?></td>
-                <td><?php echo $item->nombre2;?></td>
-                <td><?php echo $item->nombre3;?></td>
-            </tr>
-            <?php        endforeach;
-            }else{
-                echo "No se encuentran datos";
-            }
-            ?>
-
-
-        </table></div>
-</center>
-<center>
-    <?php 
-    $url = url_title('Formulario de Usuarios','-',TRUE);
-    ?><h1><?php echo anchor($url,'Usuarios')?></h1>
-    
-</center>
-
+    <h1>Formulario de usuarios</h1>
 </body>
 </html>

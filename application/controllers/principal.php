@@ -13,4 +13,7 @@ class Principal extends CI_Controller{
         $this->load->view('Curso',$datos);
          
     }
+    function vista_FormUser(){
+        $this->load->view('formUser');
+    }
 }
