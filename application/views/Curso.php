@@ -6,7 +6,8 @@
  * and open the template in the editor.
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head> 
     <style type="text/css">
@@ -36,6 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		margin: 0 0 14px 0;
 		padding: 14px 15px 10px 15px;
 	}
+        
 
 	code {
 		font-family: Consolas, Monaco, Courier New, Courier, monospace;
@@ -51,7 +53,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	#body {
 		margin: 0 15px 0 15px;
 	}
-
+        font{
+            color: #3366ff;
+            font-size: 11px;
+        }
 	p.footer {
 		text-align: right;
 		font-size: 11px;
@@ -66,16 +71,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		border: 1px solid #D0D0D0;
 		box-shadow: 0 0 8px #D0D0D0;
 	}
+        
+        #table{
+            border: 1px;
+        }
 	</style>
 </head>
 <body>
+    
+    
+<center>
     <h1>Lista de Cursos</h1>
-    <?Php
-    foreach ($datos as $items):
-    ?>
-    <h1><?php echo $items->nombre; ?></h1> 
-    <?Php
-    endforeach;
-    ?>
+    <div class="container"><table class="table table-hover" border-color="#330066">
+            <tr><td><font>Id curso</font></td>
+                <td><font>Nombre</font></td>
+                <td><font>Tipo de curso</font></td>
+                <td><font>Categoria</font></td>
+
+            </tr>    
+            <!-- @var $cursitos viene de la clase principal
+                trae el resultado de la consulta select del curso
+            -->
+            <?php 
+            if ($cursitos != NULL){
+                foreach ($cursitos as $item):
+            ?><tr>
+                <td><?php echo $item->idCurso;?></td>
+                <td><?Php echo $item->nombre;?></td>
+                <td><?php echo $item->nombre;?></td>
+                <td><?php echo $item->nombre;?></td>
+            </tr>
+            <?php        endforeach;
+            }else{
+                echo "No se encuentran datos";
+            }
+            ?>
+
+
+        </table></div>
+</center>
+
 </body>
 </html>
