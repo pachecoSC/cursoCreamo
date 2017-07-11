@@ -11,9 +11,10 @@ class Curso_model extends CI_Model{
     }
     
     function lista_curso(){
-        $consulta= $this->db->query('select tc.nombre, tca.nombre ,tca.descripcion,ttc.nombre
-            from tcurso as tc inner join ttipocurso as ttc on ttc.idTipo=tc.idTipo
-            inner join tcategoria as tca on tca.idCategoria=tc.idCategoria');
+        
+        $consulta= $this->db->query('select tc.nombre as nombre1,ttc.nombre as nombre2,tca.nombre as nombre3
+            from tcurso as tc inner join ttipocurso as ttc on tc.idTipo=ttc.idTipo
+            inner join tcategoria as tca on tc.idCategoria=tca.idCategoria order by tc.idCurso');
         return $consulta->result();
     }
 }

@@ -70,11 +70,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		margin: 10px;
 		border: 1px solid #D0D0D0;
 		box-shadow: 0 0 8px #D0D0D0;
+                
 	}
         
-        #table{
-            border: 1px;
-        }
+      
 	</style>
 </head>
 <body>
@@ -82,8 +81,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
 <center>
     <h1>Lista de Cursos</h1>
-    <div class="container"><table class="table table-hover" border-color="#330066">
-            <tr><td><font>Id curso</font></td>
+    <div class="container"><table border="1" class="table table-hover" border-color="#330066">
+            <tr>
                 <td><font>Nombre</font></td>
                 <td><font>Tipo de curso</font></td>
                 <td><font>Categoria</font></td>
@@ -96,10 +95,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             if ($cursitos != NULL){
                 foreach ($cursitos as $item):
             ?><tr>
-                <td><?php echo $item->idCurso;?></td>
-                <td><?Php echo $item->nombre;?></td>
-                <td><?php echo $item->nombre;?></td>
-                <td><?php echo $item->nombre;?></td>
+                <td><?Php echo $item->nombre1;?></td>
+                <td><?php echo $item->nombre2;?></td>
+                <td><?php echo $item->nombre3;?></td>
             </tr>
             <?php        endforeach;
             }else{
