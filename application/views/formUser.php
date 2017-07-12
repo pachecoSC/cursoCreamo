@@ -86,7 +86,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</style>
 </head>
 <body>
-    <h1>Formulario de usuarios</h1>
-    
+    <h1> Formulario de usuarios</h1>
+    <h1>prueba pull</h1>
 </body>
 </html>
