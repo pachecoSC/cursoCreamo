@@ -11,13 +11,15 @@ class Controlador_usuario extends CI_Controller{
     }
     
     public function guardarUs(){
+        // guardar datos en un array 
         $paramUs['usser'] = $this->input->post('txtUsser');
         $paramUs['password'] = $this->input->post('txtPassword');
         $paramUs['nombre'] = $this->input->post('txtNombre');
         $paramUs['telefono'] = $this->input->post('txtTelefono');
         
-        $this->
+        $this->Usuario_model->guardar_usuarios($paramUs);//envia el array al metodo en el modelo
         
-        $this->load->view('usuario/vistaUsuario');
+        $datos['usuarios'] = $this->Usuario_model->lista_usuarios();
+        $this->load->view('usuario/vistaUsuario',$datos);
     }
 }

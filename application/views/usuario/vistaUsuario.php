@@ -92,28 +92,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <h1>Lista de Usuarios</h1>
     <div class="container"><table class="table table-hover">
             <tr>
+                <td><font>Usuario</font></td>
+                <td><font>Password</font></td>
                 <td><font>Nombre</font></td>
-                <td><font>Tipo de curso</font></td>
-                <td><font>Categoria</font></td>
+                <td><font>telefono</font></td>
 
             </tr>    
-            <!-- @var $cursitos viene de la clase principal
+            <!-- @var $usuarios viene del controlador usuario
                 trae el resultado de la consulta select del curso
+            -->
             
-            !!?php 
-            if ($cursos != NULL){
-                foreach ($cursos as $item):
+            <?php 
+            if ($usuarios != NULL){
+                foreach ($usuarios as $item):
             ?><tr>
-                <td>?Php echo $item->nombre1;?></td>
-                <td>?php echo $item->nombre2;?></td>
-                <td>?php echo $item->nombre3;?></td>
+                <td><?Php echo $item->usser;?></td>
+                <td><?php echo $item->password;?></td>
+                <td><?php echo $item->nombre;?></td>
+                <td><?php echo $item->telefono;?></td>
             </tr>
-            ?php        endforeach;
+            <?php        endforeach;
             }else{
                 echo "No se encuentran datos";
             }
             ?>
-            -->
 
 
         </table></div>
