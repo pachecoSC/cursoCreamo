@@ -12,7 +12,7 @@ class Principal extends CI_Controller{
         $this->load->view('vistaPrincipal');
          
     }
-    
+    // crear controlador curso
     public function vista_ListaCursos(){
         $datos['cursos'] = $this->Curso_model->lista_curso();
         $this->load->view('Curso',$datos);

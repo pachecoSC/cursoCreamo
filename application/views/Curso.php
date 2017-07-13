@@ -123,6 +123,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     ?><h1><?php echo anchor($url,'volver Menu')?></h1>
     
 </center>
-
+<!-- crear carpeta curso y redireccionar -->
 </body>
 </html>

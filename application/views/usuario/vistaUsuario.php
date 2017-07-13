@@ -92,10 +92,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <h1>Lista de Usuarios</h1>
     <div class="container"><table class="table table-hover">
             <tr>
-                <td><font>Usuario</font></td>
+                <td><font>Email</font></td>
                 <td><font>Password</font></td>
                 <td><font>Nombre</font></td>
+                <td><font>Appellidos </font></td>
                 <td><font>telefono</font></td>
+                <td><font>Estado</font></td>
 
             </tr>    
             <!-- @var $usuarios viene del controlador usuario
@@ -106,10 +108,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             if ($usuarios != NULL){
                 foreach ($usuarios as $item):
             ?><tr>
-                <td><?Php echo $item->usser;?></td>
+                <td><?Php echo $item->email;?></td>
                 <td><?php echo $item->password;?></td>
-                <td><?php echo $item->nombre;?></td>
+                <td><?php echo $item->nombres;?></td>
+                <td><?php echo $item->apellidos;?></td>
                 <td><?php echo $item->telefono;?></td>
+                <td><?php echo $item->estado;?></td>
             </tr>
             <?php        endforeach;
             }else{

@@ -92,8 +92,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="container"><table class="table table-hover">
             <form action="guardarUs" method="POST">
                 <tr>
-                    <td>Usuario: </td>
-                    <td><input type="text" name="txtUsser"/></td>
+                    <td>Email: </td>
+                    <td><input type="text" name="txtEmail"/></td>
                 </tr>
                 <tr>
                     <td>Password: </td>
@@ -104,11 +104,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <td><input type="text" name="txtNombre"</td>
                 </tr>
                 <tr>
-                    <td>Telefono: </td>
-                    <td><input type="text" name="txtTelefono"></td>
+                    <td>Apellidos: </td>
+                    <td><input type="text" name="txtApellido"</td>
                 </tr>
-                <!-- id ASistencia nulo y estado personal true o 1
+                <tr>
+                    <td>Telefono: </td>
+                    <td><input type="text" name="txtTelefono" maxlength="9"></td>
+                </tr>
+                
+                <!-- id ASistencia nulo y estado personal true o 1-- eliminar
                 -->
+                <tr>
+                    <!--<td> estado </td>-->
+                    <td colspan="2"><input type="hidden" name="txtEstado" value="1"></td>
+                </tr>
+                
                 <tr>
                     <td colspan="2"><center><input type="submit" class=" btn btn-primary" value="Guardar"/>
                     &nbsp;&nbsp; <input type="submit" class="btn btn-primary"  value="Cancelar"/></center></td>

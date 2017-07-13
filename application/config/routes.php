@@ -60,5 +60,6 @@ $route['lista-de-cursos']= 'principal/vista_ListaCursos';
 //direccion de usuarios
 $route['formulario-de-usuarios']= 'controlador_usuario/vista_FormUser';
 $route['guardarUs']='controlador_usuario/guardarUs';
+$route['lista-de-usuarios']='controlador_usuario/vista_ListaUsuarios';
 
 //$route['translate_uri_dashes'] = FALSE;
