@@ -51,5 +51,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'principal';
 $route['404_override'] = '';
-$route['formulario-de-usuarios']= 'principal/vista_FormUser';
+
+//menu principal
+$route['menu-principal']='principal';
+//direccion de cursos
+$route['lista-de-cursos']= 'principal/vista_ListaCursos';
+
+//direccion de usuarios
+$route['formulario-de-usuarios']= 'controlador_usuario/vista_FormUser';
+$route['guardarUs']='controlador_usuario/guardarUs';
+
 //$route['translate_uri_dashes'] = FALSE;

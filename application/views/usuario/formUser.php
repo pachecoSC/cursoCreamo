@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+    <head> <title>formulario de usuario</title>
     <style type="text/css">
 
 	::selection { background-color: #E13300; color: white; }
@@ -71,6 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		border: 1px solid #D0D0D0;
 		box-shadow: 0 0 8px #D0D0D0;
                 
+                
 	}
         table{
             border:1px solid black;
@@ -86,7 +87,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</style>
 </head>
 <body>
-    <h1> Formulario de usuarios</h1>
-    <h1>prueba pull</h1>
+    
+<center><h1>Nuevo Personal</h1>
+    <div class="container"><table class="table table-hover">
+            <form action="guardarUs" method="POST">
+                <tr>
+                    <td>Usuario: </td>
+                    <td><input type="text" name="txtUsser"/></td>
+                </tr>
+                <tr>
+                    <td>Password: </td>
+                    <td><input type="password" name="txtPassword" </td>
+                </tr>
+                <tr>
+                    <td>Nombre: </td>
+                    <td><input type="text" name="txtNombre"</td>
+                </tr>
+                <tr>
+                    <td>Telefono: </td>
+                    <td><input type="text" name="txtTelefono"></td>
+                </tr>
+                <!-- id ASistencia nulo y estado personal true o 1
+                -->
+                <tr>
+                    <td colspan="2"><center><input type="submit" class=" btn btn-primary" value="Guardar"/>
+                    &nbsp;&nbsp; <input type="submit" class="btn btn-primary"  value="Cancelar"/></center></td>
+                </tr>
+        </form>
+    </table></div>
+</center>
 </body>
 </html>

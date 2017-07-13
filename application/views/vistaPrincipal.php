@@ -86,42 +86,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</style>
 </head>
 <body>
-    
-    
+<center><h1>Bienvenidos a la vista principal</h1></center>
 <center>
-    <h1>Lista de Cursos</h1>
-    <div class="container"><table class="table table-hover">
-            <tr>
-                <td><font>Nombre</font></td>
-                <td><font>Tipo de curso</font></td>
-                <td><font>Categoria</font></td>
-
-            </tr>    
-            <!-- @var $cursitos viene de la clase principal
-                trae el resultado de la consulta select del curso
-            -->
-            <?php 
-            if ($cursos != NULL){
-                foreach ($cursos as $item):
-            ?><tr>
-                <td><?Php echo $item->nombre1;?></td>
-                <td><?php echo $item->nombre2;?></td>
-                <td><?php echo $item->nombre3;?></td>
-            </tr>
-            <?php        endforeach;
-            }else{
-                echo "No se encuentran datos";
-            }
-            ?>
-
-
-        </table></div>
-</center>
-<center>
-    <?php 
-    $url = url_title('Menu Principal','-',TRUE);
-    ?><h1><?php echo anchor($url,'volver Menu')?></h1>
+    <p><h1>Menu Usuarios</h1></p>
+    <p>  <?php 
+    $url1 = url_title('Formulario de Usuarios','-',TRUE);
+    echo anchor($url1,'Agregar Usuarios')?></p>
+    <p>  <?php 
+    $url2 = url_title('Lista de Usuarios','-',TRUE);
+     echo anchor($url2,'Ver Usuarios')?></p>
     
+    <p><h1>Menu de cursos</h1></p>
+    <p>  <?php 
+    $url3 = url_title('Formulario de Cursos','-',TRUE);
+     echo anchor($url3,'Agregar Cursos')?></p>
+    <p>  <?php 
+    $url4 = url_title('Lista de Cursos','-',TRUE);
+     echo anchor($url4,'ver Cursos')?></p>
 </center>
 
 </body>

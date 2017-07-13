@@ -4,16 +4,18 @@
 class Principal extends CI_Controller{
     public function __construct() {
         parent::__construct();
+        $this->load->model('Curso_model');
         
     }
     
-    function index(){
-        $this->load->model('Curso_model');
-        $datos['cursitos'] = $this->Curso_model->lista_curso();
-        $this->load->view('Curso',$datos);
+    public function index(){
+        $this->load->view('vistaPrincipal');
          
     }
-    function vista_FormUser(){
-        $this->load->view('formUser');
+    
+    public function vista_ListaCursos(){
+        $datos['cursos'] = $this->Curso_model->lista_curso();
+        $this->load->view('Curso',$datos);
     }
+    
 }
