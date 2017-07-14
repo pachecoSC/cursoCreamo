@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+    <head> <title>formulario de usuario</title>
     <style type="text/css">
 
 	::selection { background-color: #E13300; color: white; }
@@ -71,6 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		border: 1px solid #D0D0D0;
 		box-shadow: 0 0 8px #D0D0D0;
                 
+                
 	}
         table{
             border:1px solid black;
@@ -87,42 +88,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
     
-    
-<center>
-    <h1>Lista de Cursos</h1>
+<center><h1>Nuevo Profesor</h1>
     <div class="container"><table class="table table-hover">
-            <tr>
-                <td><font>Nombre</font></td>
-                <td><font>Tipo de curso</font></td>
-                <td><font>Categoria</font></td>
-
-            </tr>    
-            <!-- @var $cursitos viene de la clase principal
-                trae el resultado de la consulta select del curso
-            -->
-            <?php 
-            if ($cursos != NULL){
-                foreach ($cursos as $item):
-            ?><tr>
-                <td><?Php echo $item->nombre1;?></td>
-                <td><?php echo $item->nombre2;?></td>
-                <td><?php echo $item->nombre3;?></td>
-            </tr>
-            <?php        endforeach;
-            }else{
-                echo "No se encuentran datos";
-            }
-            ?>
-
-
-        </table></div>
+            <form action="guardarPr" method="POST">
+                <tr>
+                    <td>Nombre: </td>
+                    <td><input type="text" name="txtNombre"/></td>
+                </tr>
+                <tr>
+                    <td>Password: </td>
+                    <td><input type="text" name="txtEmail" </td>
+                </tr>
+                <tr>
+                    <td>Especialidad: </td>
+                    <td><input type="text" name="txtEspecialidad"</td>
+                </tr>
+                <tr>
+                    <td>Descripcion: </td>
+                    <td><input type="text" name="txtDescripcion"</td>
+                </tr>
+                <tr>
+                    <td>Telefono: </td>
+                    <td><input type="text" name="txtTelefono" maxlength="9"></td>
+                </tr>
+                <tr>
+                    <td>Foto: </td>
+                    <td><input type="text" name="txtFoto"></td>
+                </tr>
+                
+                <!-- id ASistencia nulo y estado personal true o 1-- eliminar
+                -->
+                
+                <tr>
+                    <td colspan="2"><center><input type="submit" class=" btn btn-primary" value="Guardar"/>
+                    &nbsp;&nbsp;
+                    <input type="submit" class="btn btn-primary"  value="Cancelar"/>
+                            </center></td>
+                </tr>
+        </form>
+    </table></div>
 </center>
-<center>
-    <?php 
-    $url = url_title('Menu Principal','-',TRUE);
-    ?><h1><?php echo anchor($url,'volver Menu')?></h1>
-    
-</center>
-<!-- crear carpeta curso y redireccionar -->
 </body>
 </html>

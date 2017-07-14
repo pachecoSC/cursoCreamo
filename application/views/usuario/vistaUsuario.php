@@ -105,7 +105,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             -->
             
             <?php 
-            if ($usuarios != NULL){
+            if ($usuarios != FALSE){
                 foreach ($usuarios as $item):
             ?><tr>
                 <td><?Php echo $item->email;?></td>
@@ -114,6 +114,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><?php echo $item->apellidos;?></td>
                 <td><?php echo $item->telefono;?></td>
                 <td><?php echo $item->estado;?></td>
+                <td><?php $aux= $item->idusuario?> </td>
             </tr>
             <?php        endforeach;
             }else{
