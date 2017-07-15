@@ -10,7 +10,7 @@ class Model_curso extends CI_Model{
         parent::__construct();
     }
     
-    function index(){
+    function listarCursos(){
         
         
         /*volver a realizar la consulta con los nuevos campos..

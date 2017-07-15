@@ -1,11 +1,11 @@
 <?php
 
-class Model_usuario extends CI_Model{
+class Modelo_usuario extends CI_Model{
     public function __construct() {
         parent::__construct();
     }
     
-    function nuevo($paramUsuario){
+    function insertarUsuario($paramUsuario){
        $campoUsuario= array(//llenamos el array sintaxis.. campoTabla => parametro['dato'] el dato proviene del controlador usuario
            'email'=>$paramUsuario['email'],
            'password'=>$paramUsuario['password'],
@@ -16,7 +16,7 @@ class Model_usuario extends CI_Model{
        );
        $this->db->insert('usuario',$campoUsuario);
     }
-    function index(){
+    function listarUsuarios(){
         $consulta= $this->db->get('usuario');
         if ($consulta->num_rows() > 0) {
             return $consulta->result();
