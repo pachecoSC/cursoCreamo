@@ -9,29 +9,28 @@
 class Controlador_profesor extends CI_Controller{
     public function __construct() {
         parent::__construct();
-        $this->load->model('Profesor_model');
+        $this->load->model('Model_profesor');
     }
-    public function vista_FormProfesor(){
-        $this->load->view('profesor/formProfesor');
+    public function nuevo(){
+        $this->load->view('profesor/nuevo');
         
     }
-    public function vista_ListaProfesores(){
-        $datos['profesores'] = $this->Profesor_model->lista_profesores();
-        $this->load->view('profesor/vistaProfesor',$datos);
+    public function index(){
+        $datos['profesores'] = $this->Model_profesor->index();
+        $this->load->view('profesor/index',$datos);
     }
-    public function guardarPr(){
-        $paramPr['nombrep']= $this->input->post('txtNombre');
-        $paramPr['email']= $this->input->post('txtEmail');
-        $paramPr['especialidad']= $this->input->post('txtEspecialidad');
-        $paramPr['descripcion']= $this->input->post('txtDescripcion');
-        $paramPr['telefono']= $this->input->post('txtTelefono');
-        $paramPr['fotop_url']= $this->input->post('txtFoto');
+    public function guardarProfesor(){// accionProfesor..
+        $paramProfesor['nombre_profesor']= $this->input->post('txtNombre');
+        $paramProfesor['email']= $this->input->post('txtEmail');
+        $paramProfesor['especialidad']= $this->input->post('txtEspecialidad');
+        $paramProfesor['descripcion']= $this->input->post('txtDescripcion');
+        $paramProfesor['telefono']= $this->input->post('txtTelefono');
+        $paramProfesor['foto_profesor']= $this->input->post('txtFoto');
         
-        $this->Profesor_model->guardar_profesores($paramPr);
+        $this->Model_profesor->nuevo($paramProfesor);
         
-        $datos['profesores']= $this->Profesor_model->lista_profesores();
-        $this->load->view('profesor/vistaProfesor',$datos);
+        $datos['profesores']= $this->Model_profesor->index();
+        $this->load->view('profesor/index',$datos);
         
     }
 }
-

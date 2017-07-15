@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+    <head> <title>formulario de usuario</title>
     <style type="text/css">
 
 	::selection { background-color: #E13300; color: white; }
@@ -71,6 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		border: 1px solid #D0D0D0;
 		box-shadow: 0 0 8px #D0D0D0;
                 
+                
 	}
         table{
             border:1px solid black;
@@ -86,32 +87,46 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</style>
 </head>
 <body>
-<center><h1>Bienvenidos a la vista principal</h1></center>
-<center>
-    <p><h1>Menu Usuarios</h1></p>
-    <p>  <?php 
-    $url1 = url_title('Formulario de Usuarios','-',TRUE);
-    echo anchor($url1,'Agregar Usuarios')?></p>
-    <p>  <?php 
-    $url2 = url_title('Lista de Usuarios','-',TRUE);
-     echo anchor($url2,'Ver Usuarios')?></p>
     
-    <p><h1>Menu de cursos</h1></p>
-    <p>  <?php 
-    $url3 = url_title('Formulario de Cursos','-',TRUE);
-     echo anchor($url3,'Agregar Cursos')?></p>
-    <p>  <?php 
-    $url4 = url_title('Lista de Cursos','-',TRUE);
-     echo anchor($url4,'ver Cursos')?></p>
-    
-    <p><h1>Menu de Profesores</h1></p>
-    <p>  <?php 
-    $url5 = url_title('Formulario de Profesores','-',TRUE);
-     echo anchor($url5,'Agregar Profesores')?></p>
-    <p>  <?php 
-    $url6 = url_title('Lista de Profesores','-',TRUE);
-     echo anchor($url6,'ver Profesores')?></p>
+<center><h1>Nuevo Profesor</h1>
+    <div class="container"><table class="table table-hover">
+            <form action="guardarProfesor" method="POST">
+                <tr>
+                    <td>Nombre: </td>
+                    <td><input type="text" name="txtNombre"/></td>
+                </tr>
+                <tr>
+                    <td>Password: </td>
+                    <td><input type="text" name="txtEmail" </td>
+                </tr>
+                <tr>
+                    <td>Especialidad: </td>
+                    <td><input type="text" name="txtEspecialidad"</td>
+                </tr>
+                <tr>
+                    <td>Descripcion: </td>
+                    <td><input type="text" name="txtDescripcion"</td>
+                </tr>
+                <tr>
+                    <td>Telefono: </td>
+                    <td><input type="text" name="txtTelefono" maxlength="9"></td>
+                </tr>
+                <tr>
+                    <td>Foto: </td>
+                    <td><input type="text" name="txtFoto"></td>
+                </tr>
+                
+                <!-- id ASistencia nulo y estado personal true o 1-- eliminar
+                -->
+                
+                <tr>
+                    <td colspan="2"><center><input type="submit" class=" btn btn-primary" value="Guardar"/>
+                    &nbsp;&nbsp;
+                    <input type="submit" class="btn btn-primary"  value="Cancelar"/>
+                     </center></td>
+                </tr>
+        </form>
+    </table></div>
 </center>
-
 </body>
 </html>

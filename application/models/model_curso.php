@@ -5,12 +5,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-class Curso_model extends CI_Model{
+class Model_curso extends CI_Model{
     public function __construct() {
         parent::__construct();
     }
     
-    function lista_cursos(){
+    function index(){
         
         
         /*volver a realizar la consulta con los nuevos campos..
@@ -23,12 +23,15 @@ class Curso_model extends CI_Model{
     }
     
     function obtenerCurso($id){
-        $this->db->where('idcurso',$id);
+        $this->db->where('id_curso',$id);
         $consulta = $this->db->get('curso');
         if ($consulta->num_rows() > 0) {
             return $consulta->result();
         }else{
             return FALSE;
         }
+    }
+    function nuevo(){
+        
     }
 }

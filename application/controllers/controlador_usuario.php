@@ -4,28 +4,28 @@
 class Controlador_usuario extends CI_Controller{
     public function __construct() {
         parent::__construct();
-        $this->load->model('Usuario_model');
+        $this->load->model('Model_usuario');
     }
-    public function vista_FormUser(){
-        $this->load->view('usuario/formUser');
+    public function nuevo(){
+        $this->load->view('usuario/nuevo');
     }
     
-    public function guardarUs(){
+    public function guardarUsuario(){
         // guardar datos en un array 
-        $paramUs['email'] = $this->input->post('txtEmail');
-        $paramUs['password'] = $this->input->post('txtPassword');
-        $paramUs['nombres'] = $this->input->post('txtNombre');
-        $paramUs['apellidos']= $this->input->post('txtApellido');
-        $paramUs['telefono'] = $this->input->post('txtTelefono');
-        $paramUs['estado'] = $this->input->post('txtEstado');
+        $paramUsusario['email'] = $this->input->post('txtEmail');
+        $paramUsuario['password'] = $this->input->post('txtPassword');
+        $paramUsuario['nombres_usuario'] = $this->input->post('txtNombre');
+        $paramUsuario['apellidos']= $this->input->post('txtApellido');
+        $paramUsuario['telefono'] = $this->input->post('txtTelefono');
+        $paramUsuario['estado'] = $this->input->post('txtEstado');
         
-        $this->Usuario_model->guardar_usuarios($paramUs);//envia el array al metodo en el modelo
+        $this->Model_usuario->nuevo($paramUsuario);//envia el array al metodo en el modelo
         
-        $datos['usuarios'] = $this->Usuario_model->lista_usuarios();
-        $this->load->view('usuario/vistaUsuario',$datos);
+        $datos['usuarios'] = $this->Usuario_model->index();
+        $this->load->view('usuario/index',$datos);
     }
-    public function vista_ListaUsuarios(){
-        $datos['usuarios'] = $this->Usuario_model->lista_usuarios();
-        $this->load->view('usuario/vistaUsuario',$datos);
+    public function index(){
+        $datos['usuarios'] = $this->Model_usuario->index();
+        $this->load->view('usuario/index',$datos);
     }
 }

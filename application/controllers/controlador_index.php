@@ -1,15 +1,13 @@
 <?php
 //defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Principal extends CI_Controller{
+class Controlador_index extends CI_Controller{
     public function __construct() {
         parent::__construct();
-        $this->load->model('Curso_model');
-        
     }
     
     public function index(){
-        $this->load->view('vistaPrincipal');
+        $this->load->view('principal');
          
     }
     

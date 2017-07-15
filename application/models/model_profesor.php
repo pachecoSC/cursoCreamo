@@ -5,12 +5,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-class Profesor_model extends CI_Model{
+class Model_profesor extends CI_Model{
     
     public function __construct() {
         parent::__construct();
     }
-    public function lista_profesores(){
+    public function index(){
         $consulta= $this->db->get('profesor');
         if($consulta->num_rows() > 0){
             return $consulta->result();
@@ -19,7 +19,7 @@ class Profesor_model extends CI_Model{
         }
     }
     function obtenerProfesor($id){
-        $this->db->where('idprofesor',$id);
+        $this->db->where('id_profesor',$id);
         $consulta = $this->db->get('profesor');
         if ($consulta->num_rows() > 0) {
             return $consulta->result();
@@ -28,15 +28,15 @@ class Profesor_model extends CI_Model{
         }
     }
     
-    function guardar_profesores($paramPr){
-        $campoPr= array(
-            'nombrep'=>$paramPr['nombrep'],
-            'email'=>$paramPr['email'],
-            'especialidad'=>$paramPr['especialidad'],
-            'descripcion'=>$paramPr['descripcion'],
-            'telefono'=>$paramPr['telefono'],
-            'fotop_url'=>$paramPr['fotop_url']
+    function nuevo($paramProfesor){
+        $campoProfesor= array(
+            'nombre_profesor'=>$campoProfesor['nombre_profesor'],
+            'email'=>$campoProfesor['email'],
+            'especialidad'=>$paramProfesor['especialidad'],
+            'descripcion'=>$paramProfesor['descripcion'],
+            'telefono'=>$paramProfesor['telefono'],
+            'foto_profesor'=>$paramProfesor['foto_profesor']
             );
-            $this->db->insert('profesor',$campoPr);
+            $this->db->insert('profesor',$campoProfesor);
     }
 }

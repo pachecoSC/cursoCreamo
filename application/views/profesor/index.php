@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head> <title>formulario de usuario</title>
+<head> 
     <style type="text/css">
 
 	::selection { background-color: #E13300; color: white; }
@@ -71,7 +71,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		border: 1px solid #D0D0D0;
 		box-shadow: 0 0 8px #D0D0D0;
                 
-                
 	}
         table{
             border:1px solid black;
@@ -88,43 +87,50 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
     
-<center><h1>Nuevo Personal</h1>
+    
+<center>
+    <h1>Lista de Profesores</h1>
     <div class="container"><table class="table table-hover">
-            <form action="guardarUs" method="POST">
-                <tr>
-                    <td>Email: </td>
-                    <td><input type="text" name="txtEmail"/></td>
-                </tr>
-                <tr>
-                    <td>Password: </td>
-                    <td><input type="password" name="txtPassword" </td>
-                </tr>
-                <tr>
-                    <td>Nombre: </td>
-                    <td><input type="text" name="txtNombre"</td>
-                </tr>
-                <tr>
-                    <td>Apellidos: </td>
-                    <td><input type="text" name="txtApellido"</td>
-                </tr>
-                <tr>
-                    <td>Telefono: </td>
-                    <td><input type="text" name="txtTelefono" maxlength="9"></td>
-                </tr>
-                
-                <!-- id ASistencia nulo y estado personal true o 1-- eliminar
-                -->
-                <tr>
-                    <!--<td> estado </td>-->
-                    <td colspan="2"><input type="hidden" name="txtEstado" value="1"></td>
-                </tr>
-                
-                <tr>
-                    <td colspan="2"><center><input type="submit" class=" btn btn-primary" value="Guardar"/>
-                    &nbsp;&nbsp; <input type="submit" class="btn btn-primary"  value="Cancelar"/></center></td>
-                </tr>
-        </form>
-    </table></div>
+            <tr>
+                <td><font>Nombre</font></td>
+                <td><font>Email</font></td>
+                <td><font>Especialidad</font></td>
+                <td><font>Descripcion</font></td>
+                <td><font>Telefono</font></td>
+                <td><font>Foto</font></td>
+
+            </tr>    
+            <!-- @var $usuarios viene del controlador usuario
+                trae el resultado de la consulta select del curso
+            -->
+            
+            <?php 
+            if ($profesores != FALSE){
+                foreach ($profesores as $item):
+            ?><tr>
+                <td><?Php echo $item->nombre_profesor;?></td>
+                <td><?php echo $item->email;?></td>
+                <td><?php echo $item->especialidad;?></td>
+                <td><?php echo $item->descripcion;?></td>
+                <td><?php echo $item->telefono;?></td>
+                <td><?php echo $item->foto_profesor;?></td>
+                <td><?php $aux= $item->id_profesor?> </td><!-- usada para guardar el ID y luego usarlo para modificar.-->
+            </tr>
+            <?php        endforeach;
+            }else{
+                echo "No se encuentran datos";
+            }
+            ?>
+
+
+        </table></div>
 </center>
+<center>
+    <?php 
+    $url = url_title('Menu Principal','-',TRUE);
+    ?><h1><?php echo anchor($url,'volver Menu')?></h1>
+    
+</center>
+
 </body>
 </html>

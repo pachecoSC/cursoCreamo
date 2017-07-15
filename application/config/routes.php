@@ -49,23 +49,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'principal';
+$route['default_controller'] = 'controlador_index';
 $route['404_override'] = '';
 
 //$route['']='';  sintaxis limpia..
 //menu principal
 $route['menu-principal']='principal';
 //direccion de cursos
-$route['lista-de-cursos']= 'controlador_curso/vista_ListaCursos';
+$route['lista-de-cursos']= 'controlador_curso/index';
 
 //direccion de usuarios
-$route['formulario-de-usuarios']= 'controlador_usuario/vista_FormUser';
-$route['guardarUs']='controlador_usuario/guardarUs';
-$route['lista-de-usuarios']='controlador_usuario/vista_ListaUsuarios';
+$route['formulario-de-usuarios']= 'controlador_usuario/nuevo';
+$route['guardarUs']='controlador_usuario/guardarUsuario';
+$route['lista-de-usuarios']='controlador_usuario/index';
 
 //direccion de profesores
-$route['formulario-de-profesores']='controlador_profesor/vista_FormProfesor';
-$route['lista-de-profesores']='controlador_profesor/vista_ListaProfesores';
-$route['guardarPr']='controlador_profesor/guardarPr';
+$route['formulario-de-profesores']='controlador_profesor/nuevo';
+$route['lista-de-profesores']='controlador_profesor/index';
+$route['guardarPr']='controlador_profesor/guardarProfesor';
 
 //$route['translate_uri_dashes'] = FALSE;

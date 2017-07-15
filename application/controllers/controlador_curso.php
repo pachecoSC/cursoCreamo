@@ -9,14 +9,14 @@
 class Controlador_curso extends CI_Controller{
     public function __construct() {
         parent::__construct();
-        $this->load->model('Curso_model');
+        $this->load->model('Model_curso');
     }
-    public function vista_FormCurso(){
-        $this->load->view('curso/formCurso');
+    public function nuevo(){
+        $this->load->view('curso/nuevo');
         
     }
-    public function vista_ListaCursos(){
-        $datos['cursos'] = $this->Curso_model->lista_curso();
-        $this->load->view('curso/vistaCurso',$datos);
+    public function index(){
+        $datos['cursos'] = $this->Model_curso->lista_curso();
+        $this->load->view('curso/index',$datos);
     }
 }
