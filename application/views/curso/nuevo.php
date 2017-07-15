@@ -116,8 +116,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </tr>
                 <!--usar combo box.. onsulta: muestra nombre y guarda id -->
                 <tr>
-                    <td>tipo de curso: </td>
-                    <td></td>
+                    <td>Tipo de curso: </td>
+                    <td><select id="id_tipo" name="id_tipo" class="form-control">
+                            <option value="">elije opcion</option>
+                            <?php 
+                            foreach ($tipoc as $item){
+                                echo '<option value="'.$item-> id_tipo.'">'. $item->nombre_tipo .'</option>';
+                            }
+                            ?>
+                        </select></td>
                 </tr>
                 <tr>
                     <td>categoria de curso: </td>
@@ -129,7 +136,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </tr>
                 <tr>
                     <td>Profesor: </td>
-                    <td></td>
+                    <td><select id="id_profesor" name="id_profesor" class="form-control">
+                            <option value="">elije opcion</option>
+                        <?php>
+                        foreach($nombre_p as $item)
+                             echo '<option value="'.$item-> id_profesor. '">'.$item-> nombre_profesor.'</option>';
+                        
+                        
+                        ?>
+                        </select></td>
                 </tr>
                 
                 

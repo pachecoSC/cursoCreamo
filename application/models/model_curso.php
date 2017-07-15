@@ -10,7 +10,7 @@ class Model_curso extends CI_Model{
         parent::__construct();
     }
     
-    function index(){
+    function ListarCurso(){
         
         
         /*volver a realizar la consulta con los nuevos campos..
@@ -31,7 +31,26 @@ class Model_curso extends CI_Model{
             return FALSE;
         }
     }
-    function nuevo(){
+    function insertarCurso(){
         
+    }
+    //metodo que obtiene consulta para llenar combo
+    function obtenerTipoCurso(){
+        $this->db->order_by('nombre_tipo','asc');
+        $consulta = $this->db->get('tipo_curso');
+        
+        // hay 1 a mas resultados
+        if($consulta->num_rows() > 0){
+            return $consulta->result();
+        }
+    }
+    
+    function obtenerProfesor(){
+        $this->db->order_by('nombre_profesor','asc');
+        $consulta= $this->db->get('profesor');
+        // existe 1 a mas resultados
+        if($consulta->num_rows() > 0){
+                return $consulta->result();
+        }
     }
 }

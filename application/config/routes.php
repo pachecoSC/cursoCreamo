@@ -57,6 +57,7 @@ $route['404_override'] = '';
 $route['menu-principal']='principal';
 //direccion de cursos
 $route['lista-de-cursos']= 'controlador_curso/index';
+$route['formulario-de-cursos'] ='controlador_curso/nuevo';
 
 //direccion de usuarios
 $route['formulario-de-usuarios']= 'controlador_usuario/nuevo';

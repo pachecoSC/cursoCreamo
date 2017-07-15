@@ -16,7 +16,7 @@ class Controlador_profesor extends CI_Controller{
         
     }
     public function index(){
-        $datos['profesores'] = $this->Model_profesor->index();
+        $datos['profesores'] = $this->Model_profesor->listarProfesor();
         $this->load->view('profesor/index',$datos);
     }
     public function guardarProfesor(){// accionProfesor..
@@ -27,9 +27,9 @@ class Controlador_profesor extends CI_Controller{
         $paramProfesor['telefono']= $this->input->post('txtTelefono');
         $paramProfesor['foto_profesor']= $this->input->post('txtFoto');
         
-        $this->Model_profesor->nuevo($paramProfesor);
+        $this->Model_profesor->insertarProfesor($paramProfesor);
         
-        $datos['profesores']= $this->Model_profesor->index();
+        $datos['profesores']= $this->Model_profesor->listarProfesor();
         $this->load->view('profesor/index',$datos);
         
     }
