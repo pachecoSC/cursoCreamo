@@ -112,6 +112,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <p>  <?php 
     $url6 = url_title('Lista de Profesores','-',TRUE);
      echo anchor($url6,'ver Profesores')?></p>
+    
+    <p><h1>Menu de Categoria</h1></p>
+    <p><?php
+    $url7= url_title('Formulario de Categorias','-',TRUE);
+    echo anhor($url7,'Agregar Categoria');?></p>
+    <p><?php
+    $url8= url_title('Lista de Categorias','-',TRUE);
+    echo anchor($url8,'ver Categorias');?></p>
 </center>
 
 </body>

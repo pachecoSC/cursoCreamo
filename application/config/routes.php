@@ -61,12 +61,16 @@ $route['formulario-de-cursos'] ='controlador_curso/nuevo';
 
 //direccion de usuarios
 $route['formulario-de-usuarios']= 'controlador_usuario/nuevo';
-$route['guardarUs']='controlador_usuario/guardarUsuario';
+$route['guardarUsuario']='controlador_usuario/guardarUsuario';
 $route['lista-de-usuarios']='controlador_usuario/index';
 
 //direccion de profesores
 $route['formulario-de-profesores']='controlador_profesor/nuevo';
 $route['lista-de-profesores']='controlador_profesor/index';
-$route['guardarPr']='controlador_profesor/guardarProfesor';
+$route['guardarProfesor']='controlador_profesor/guardarProfesor';
 
+//direcciones de categorias
+$route['formulario-de-categorias']='controlador_categoria/nuevo';
+$route['lista-de-categoria']='controlador_categoria/index';
+$route['guardarategoria']='controlador_categoria/guardarCategoria';
 //$route['translate_uri_dashes'] = FALSE;
