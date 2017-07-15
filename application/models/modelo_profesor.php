@@ -5,7 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-class Model_profesor extends CI_Model{
+class Modelo_profesor extends CI_Model{
     
     public function __construct() {
         parent::__construct();
@@ -18,7 +18,7 @@ class Model_profesor extends CI_Model{
             return FALSE;
         }
     }
-    function obtenerProfesor($id){
+    function obtenerIdProfesor($id){
         $this->db->where('id_profesor',$id);
         $consulta = $this->db->get('profesor');
         if ($consulta->num_rows() > 0) {

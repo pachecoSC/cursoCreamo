@@ -9,12 +9,12 @@
 class Controlador_curso extends CI_Controller{
     public function __construct() {
         parent::__construct();
-        $this->load->model('Model_curso');
+        $this->load->model('Modelo_curso');
     }
     
     public function index(){
         // obtenemos el array con los datos dentro de la tabla curso
-        $datos['cursos'] = $this->Model_curso->listar_curso();
+        $datos['cursos'] = $this->Modelo_curso->listar_curso();
         //enviamos los atributos a la vista
         $this->load->view('curso/index',$datos);
         
@@ -24,9 +24,11 @@ class Controlador_curso extends CI_Controller{
         
         
         //obtener el array con los datos de tipo curso
-        $datos['tipoc']= $this->Model_curso->obtenerTipoCurso() ;
+        $datos['tipoc']= $this->Modelo_curso->llenarTipoCurso() ;
          //obtener el arrau con los datos de profesores
-         $datos['nombre_p']= $this->Model_curso->obtenerProfesor();
+        $datos['profesores']= $this->Modelo_curso->llenarProfesor();
+        //obtener el array con los datos de estados
+        $datos['estados']= $this->Modelo_curso->llenarEstadoCurso();
         
          $this->load->view('curso/nuevo',$datos);
          //$this->load->view('curso/nuevo',$datoprofesor);

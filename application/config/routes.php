@@ -54,7 +54,7 @@ $route['404_override'] = '';
 
 //$route['']='';  sintaxis limpia..
 //menu principal
-$route['menu-principal']='principal';
+$route['menu-principal']='controlador_index';
 //direccion de cursos
 $route['lista-de-cursos']= 'controlador_curso/index';
 $route['formulario-de-cursos'] ='controlador_curso/nuevo';

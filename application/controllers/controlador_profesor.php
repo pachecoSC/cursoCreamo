@@ -9,27 +9,30 @@
 class Controlador_profesor extends CI_Controller{
     public function __construct() {
         parent::__construct();
-        $this->load->model('Model_profesor');
+        $this->load->model('Modelo_profesor');
     }
     public function nuevo(){
         $this->load->view('profesor/nuevo');
         
     }
     public function index(){
-        $datos['profesores'] = $this->Model_profesor->listarProfesor();
+        $datos['profesores'] = $this->Modelo_profesor->listarProfesor();
         $this->load->view('profesor/index',$datos);
     }
-    public function guardarProfesor(){// accionProfesor..
+
+
+       public function guardarProfesor(){// accionProfesor..
         $paramProfesor['nombre_profesor']= $this->input->post('txtNombre');
         $paramProfesor['email']= $this->input->post('txtEmail');
         $paramProfesor['especialidad']= $this->input->post('txtEspecialidad');
         $paramProfesor['descripcion']= $this->input->post('txtDescripcion');
         $paramProfesor['telefono']= $this->input->post('txtTelefono');
         $paramProfesor['foto_profesor']= $this->input->post('txtFoto');
+
         
-        $this->Model_profesor->insertarProfesor($paramProfesor);
+        $this->Modelo_profesor->insertarProfesor($paramProfesor);
         
-        $datos['profesores']= $this->Model_profesor->listarProfesor();
+        $datos['profesores']= $this->Modelo_profesor->listarProfesor();
         $this->load->view('profesor/index',$datos);
         
     }

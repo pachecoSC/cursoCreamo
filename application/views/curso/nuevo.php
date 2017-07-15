@@ -118,10 +118,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <tr>
                     <td>Tipo de curso: </td>
                     <td><select id="id_tipo" name="id_tipo" class="form-control">
-                            <option value="">elije opcion</option>
+                            <option value="0">elije una opcion</option>
                             <?php 
                             foreach ($tipoc as $item){
-                                echo '<option value="'.$item-> id_tipo.'">'. $item->nombre_tipo .'</option>';
+                                echo '<option value="'.$item-> id_tipo .'">'. $item->nombre_tipo .'</option>';
                             }
                             ?>
                         </select></td>
@@ -132,18 +132,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </tr>
                 <tr>
                     <td>estado del curso: </td>
-                    <td></td>
+                    <td><select id="id_estados" name="id_estados" class="form-control">
+                            <option value="0">elije una opcion</option>
+                            <?php
+                            foreach ($estados as $iteme){
+                                echo '<option value="' .$iteme->id_estado_curso. '">' .$iteme->nombre_estado. '</option>';
+                            }
+                            ?>
+                        </select></td>
                 </tr>
                 <tr>
                     <td>Profesor: </td>
                     <td><select id="id_profesor" name="id_profesor" class="form-control">
-                            <option value="">elije opcion</option>
-                        <?php>
-                        foreach($nombre_p as $item)
-                             echo '<option value="'.$item-> id_profesor. '">'.$item-> nombre_profesor.'</option>';
-                        
-                        
-                        ?>
+                            <option value="0">elije una opcion</option>
+                            <?php
+                            foreach ($profesores as $itemp){
+                                echo '<option value="' . $itemp-> id_profesor . '">' . $itemp->nombre_profesor .'</option>';
+                                
+                            }
+                            ?>
                         </select></td>
                 </tr>
                 

@@ -5,7 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-class Model_curso extends CI_Model{
+class Modelo_curso extends CI_Model{
     public function __construct() {
         parent::__construct();
     }
@@ -22,7 +22,7 @@ class Model_curso extends CI_Model{
          */
     }
     
-    function obtenerCurso($id){
+    /*function obtenerCurso($id){
         $this->db->where('id_curso',$id);
         $consulta = $this->db->get('curso');
         if ($consulta->num_rows() > 0) {
@@ -30,12 +30,12 @@ class Model_curso extends CI_Model{
         }else{
             return FALSE;
         }
-    }
+    }*/
     function insertarCurso(){
         
     }
     //metodo que obtiene consulta para llenar combo
-    function obtenerTipoCurso(){
+    function llenarTipoCurso(){
         $this->db->order_by('nombre_tipo','asc');
         $consulta = $this->db->get('tipo_curso');
         
@@ -44,13 +44,24 @@ class Model_curso extends CI_Model{
             return $consulta->result();
         }
     }
-    
-    function obtenerProfesor(){
+    //meotodo que llena el combo box de estado
+    function llenarEstadoCurso(){
+        $this->db->order_by('nombre_estado','asc');
+        $consulta = $this->db->get('estado_curso');
+        //existe 1 a mas resultado
+        if($consulta->num_rows()>0){
+            return $consulta->result();
+        }
+    }
+    // metodo que llena combo box de profesores
+    function llenarProfesor(){
         $this->db->order_by('nombre_profesor','asc');
-        $consulta= $this->db->get('profesor');
+        $consulta = $this->db->get('profesor');
+        
         // existe 1 a mas resultados
-        if($consulta->num_rows() > 0){
-                return $consulta->result();
+        if($consulta->num_rows()>0){
+            return $consulta->result();
         }
     }
 }
+
