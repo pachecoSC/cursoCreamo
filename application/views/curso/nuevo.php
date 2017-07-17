@@ -111,8 +111,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <td><input type="text" name="txtPrecio"</td>
                 </tr>
                 <tr>
+                    <td>Cantidad de horas: </td>
+                    <td><input type="text" name="txtHoras"</td>
+                </tr>
+                <tr>
                     <td>Foto de curso: </td>
-                    <td><input type="text" name="txtFotoCurso"></td>
+                    <td><input type="text" name="txtFoto"></td>
                 </tr>
                 <!--usar combo box.. onsulta: muestra nombre y guarda id -->
                 <tr>

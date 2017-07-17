@@ -25,7 +25,7 @@ class Controlador_profesor extends CI_Controller{
         $paramProfesor['nombre_profesor']= $this->input->post('txtNombre');
         $paramProfesor['email']= $this->input->post('txtEmail');
         $paramProfesor['especialidad']= $this->input->post('txtEspecialidad');
-        $paramProfesor['descripcion']= $this->input->post('txtDescripcion');
+        $paramProfesor['descripcion_profesor']= $this->input->post('txtDescripcion');
         $paramProfesor['telefono']= $this->input->post('txtTelefono');
         $paramProfesor['foto_profesor']= $this->input->post('txtFoto');
 

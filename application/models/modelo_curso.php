@@ -36,7 +36,7 @@ class Modelo_curso extends CI_Model{
     }
     //metodo que obtiene consulta para llenar combo
     function llenarTipoCurso(){
-        $this->db->order_by('nombre_tipo','asc');
+        $this->db->order_by('nombre_tipo_curso','asc');
         $consulta = $this->db->get('tipo_curso');
         
         // hay 1 a mas resultados
@@ -46,7 +46,7 @@ class Modelo_curso extends CI_Model{
     }
     //meotodo que llena el combo box de estado
     function llenarEstadoCurso(){
-        $this->db->order_by('nombre_estado','asc');
+        $this->db->order_by('descripcion_estado','asc');
         $consulta = $this->db->get('estado_curso');
         //existe 1 a mas resultado
         if($consulta->num_rows()>0){

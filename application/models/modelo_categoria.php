@@ -20,7 +20,7 @@ class Modelo_categoria extends CI_Model{
         }
     }
     function obtenerCategoria($id){
-        $this->db->where('id_categoria',$id);
+        $this->db->where('id_categoria_curso',$id);
         $consulta = $this->db->get('categoria_curso');
         if ($consulta->num_rows() > 0) {
             return $consulta->result();
@@ -31,9 +31,9 @@ class Modelo_categoria extends CI_Model{
     
     function insertarCategoria($paramCategoria){
         $campoCategoria= array(
-            'categoria_curso'=>$paramCategoria['categoria_curso'],
+            'categoria_curso'=>$paramCategoria['nombre_categoria'],
             'foto_categoria'=>$paramCategoria['foto_categoria']
             );
-            $this->db->insert('profesor',$campoCategoria);
+            $this->db->insert('categoria_curso',$campoCategoria);
     }
 }

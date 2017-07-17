@@ -96,7 +96,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <td><input type="text" name="txtNombre"/></td>
                 </tr>
                 <tr>
-                    <td>Password: </td>
+                    <td>Email: </td>
                     <td><input type="text" name="txtEmail" </td>
                 </tr>
                 <tr>

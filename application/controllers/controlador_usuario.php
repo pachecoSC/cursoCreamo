@@ -14,10 +14,10 @@ class Controlador_usuario extends CI_Controller{
         // guardar datos en un array 
         $paramUsuario['email'] = $this->input->post('txtEmail');
         $paramUsuario['password'] = $this->input->post('txtPassword');
-        $paramUsuario['nombres_usuario'] = $this->input->post('txtNombre');
+        $paramUsuario['nombre_usuario'] = $this->input->post('txtNombre');
         $paramUsuario['apellidos']= $this->input->post('txtApellido');
         $paramUsuario['telefono'] = $this->input->post('txtTelefono');
-        $paramUsuario['estado'] = $this->input->post('txtEstado');
+        $paramUsuario['estado_usuario'] = $this->input->post('txtEstado');
         
         $this->Modelo_usuario->insertarUsuario($paramUsuario);//envia el array al metodo en el modelo
         

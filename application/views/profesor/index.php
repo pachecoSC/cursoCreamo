@@ -111,10 +111,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><?Php echo $item->nombre_profesor;?></td>
                 <td><?php echo $item->email;?></td>
                 <td><?php echo $item->especialidad;?></td>
-                <td><?php echo $item->descripcion;?></td>
+                <td><?php echo $item->descripcion_profesor;?></td>
                 <td><?php echo $item->telefono;?></td>
                 <td><?php echo $item->foto_profesor;?></td>
-                <td><?php $aux= $item->id_profesor?> </td><!-- usada para guardar el ID y luego usarlo para modificar.-->
+                <!--<td><?php //$aux= $item->id_profesor?> </td> usada para guardar el ID y luego usarlo para modificar.-->
             </tr>
             <?php        endforeach;
             }else{

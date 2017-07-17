@@ -33,7 +33,7 @@ class Modelo_profesor extends CI_Model{
             'nombre_profesor'=>$campoProfesor['nombre_profesor'],
             'email'=>$campoProfesor['email'],
             'especialidad'=>$paramProfesor['especialidad'],
-            'descripcion'=>$paramProfesor['descripcion'],
+            'descripcion_profesor'=>$paramProfesor['descripcion_profesor'],
             'telefono'=>$paramProfesor['telefono'],
             'foto_profesor'=>$paramProfesor['foto_profesor']
             );

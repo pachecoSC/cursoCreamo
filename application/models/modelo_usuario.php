@@ -12,7 +12,7 @@ class Modelo_usuario extends CI_Model{
            'nombre_usuario'=>$paramUsuario['nombre_usuario'],
            'apellidos'=>$paramUsuario['apellidos'],
            'telefono'=>$paramUsuario['telefono'],
-           'estado'=>$paramUsuario['estado']
+           'estado_usuario'=>$paramUsuario['estado_usuario']
        );
        $this->db->insert('usuario',$campoUsuario);
     }
