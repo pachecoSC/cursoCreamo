@@ -121,7 +121,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 
                 <tr>
                     <td colspan="2"><center><input type="submit" class=" btn btn-primary" value="Guardar"/>
-                    &nbsp;&nbsp; <input type="submit" class="btn btn-primary"  value="Cancelar"/></center></td>
+                    &nbsp;&nbsp;<a class="btn btn-danger" href="menu-principal">Cancelar</a> </center></td>
+                    
                 </tr>
         </form>
     </table></div>

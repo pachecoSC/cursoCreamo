@@ -98,6 +98,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><font>Appellidos </font></td>
                 <td><font>telefono</font></td>
                 <td><font>Estado</font></td>
+                <td><font>Opciones</font></td>
 
             </tr>    
             <!-- @var $usuarios viene del controlador usuario
@@ -115,6 +116,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><?php echo $item->telefono;?></td>
                 <td><?php echo $item->estado_usuario;?></td>
                 <!--<td><?php //$aux= $item->id_usuario?> </td>-->
+                <td>
+                    <?php
+                        // codigo para los botones editar y eliminar
+                    ?>
+                </td>
             </tr>
             <?php        endforeach;
             }else{
