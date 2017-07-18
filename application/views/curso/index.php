@@ -93,20 +93,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="container"><table class="table table-hover">
             <tr>
                 <td><font>Nombre</font></td>
-                <td><font>Tipo de curso</font></td>
-                <td><font>Categoria</font></td>
-
+                <td><font>Descripcion </font></td>
+                <td><font>Enlace </font></td>
+                <td><font>Precio </font></td>
+                <td><font>N° Horas </font></td>
+                <td><font>Foto de curso </font></td>
+                <td><font>Tipo de curso </font></td>
+                <td><font>Profesor </font></td>
+                <td><font>Categoria de curso </font></td>
+                <td><font>Estado de curso </font></td>
             </tr>    
             <!-- @var $cursitos viene de la clase principal
                 trae el resultado de la consulta select del curso
             -->
             <?php 
             if ($cursos != NULL){
-                foreach ($cursos as $item):
+                foreach ($cursos as $itemcu):
             ?><tr>
-                <td><?Php echo $item->nombre1;?></td>
-                <td><?php echo $item->nombre2;?></td>
-                <td><?php echo $item->nombre3;?></td>
+                <td><?Php echo $itemcu->nombre;?></td>
+                <td><?Php echo $itemcu->descripcion;?></td>
+                <td><?Php echo $itemcu->enlace;?></td>
+                <td><?Php echo $itemcu->precio;?></td>
+                <td><?Php echo $itemcu->horas;?></td>
+                <td><?Php echo $itemcu->foto;?></td>
+                <td><?Php echo $itemcu->tipo;?></td>
+                <td><?Php echo $itemcu->profesor;?></td>
+                <td><?Php echo $itemcu->categoria;?></td>
+                <td><?Php echo $itemcu->estado;?></td>
+                
+                
             </tr>
             <?php        endforeach;
             }else{

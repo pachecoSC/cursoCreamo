@@ -58,6 +58,7 @@ $route['menu-principal']='controlador_index';
 //direccion de cursos
 $route['lista-de-cursos']= 'controlador_curso/index';
 $route['formulario-de-cursos'] ='controlador_curso/nuevo';
+$route['guardarCurso']='controlador_curso/guardarCurso';
 
 //direccion de usuarios
 $route['formulario-de-usuarios']= 'controlador_usuario/nuevo';
@@ -71,6 +72,6 @@ $route['guardarProfesor']='controlador_profesor/guardarProfesor';
 
 //direcciones de categorias
 $route['formulario-de-categorias']='controlador_categoria/nuevo';
-$route['lista-de-categoria']='controlador_categoria/index';
-$route['guardarategoria']='controlador_categoria/guardarCategoria';
+$route['lista-de-categorias']='controlador_categoria/index';
+$route['guardarCategoria']='controlador_categoria/guardarCategoria';
 //$route['translate_uri_dashes'] = FALSE;

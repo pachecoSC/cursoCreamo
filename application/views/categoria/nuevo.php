@@ -99,9 +99,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <td><input type="text" name="txtFoto"></td>
                 </tr>
                 
-                <!-- id ASistencia nulo y estado personal true o 1-- eliminar
-                -->
-                
                 <tr>
                     <td colspan="2"><center><input type="submit" class=" btn btn-primary" value="Guardar"/>
                     &nbsp;&nbsp;

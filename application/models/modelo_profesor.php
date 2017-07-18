@@ -11,6 +11,7 @@ class Modelo_profesor extends CI_Model{
         parent::__construct();
     }
     public function listarProfesor(){
+        $this->db->order_by('nombre_profesor','asc');
         $consulta= $this->db->get('profesor');
         if($consulta->num_rows() > 0){
             return $consulta->result();
@@ -30,8 +31,8 @@ class Modelo_profesor extends CI_Model{
     
     function insertarProfesor($paramProfesor){
         $campoProfesor= array(
-            'nombre_profesor'=>$campoProfesor['nombre_profesor'],
-            'email'=>$campoProfesor['email'],
+            'nombre_profesor'=>$paramProfesor['nombre_profesor'],
+            'email'=>$paramProfesor['email'],
             'especialidad'=>$paramProfesor['especialidad'],
             'descripcion_profesor'=>$paramProfesor['descripcion_profesor'],
             'telefono'=>$paramProfesor['telefono'],

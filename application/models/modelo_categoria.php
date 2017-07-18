@@ -11,7 +11,8 @@ class Modelo_categoria extends CI_Model{
         parent::__construct();
     }
     
-    public function listarCategorias(){
+    public function listarCategoria(){
+        $this->db->order_by('nombre_categoria','asc');
         $consulta= $this->db->get('categoria_curso');
         if($consulta->num_rows() > 0){
             return $consulta->result();
@@ -31,7 +32,7 @@ class Modelo_categoria extends CI_Model{
     
     function insertarCategoria($paramCategoria){
         $campoCategoria= array(
-            'categoria_curso'=>$paramCategoria['nombre_categoria'],
+            'nombre_categoria'=>$paramCategoria['nombre_categoria'],
             'foto_categoria'=>$paramCategoria['foto_categoria']
             );
             $this->db->insert('categoria_curso',$campoCategoria);

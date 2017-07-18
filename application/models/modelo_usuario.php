@@ -17,6 +17,7 @@ class Modelo_usuario extends CI_Model{
        $this->db->insert('usuario',$campoUsuario);
     }
     function listarUsuario(){
+        $this->db->order_by('nombre_usuario','asc');
         $consulta= $this->db->get('usuario');
         if ($consulta->num_rows() > 0) {
             return $consulta->result();

@@ -124,27 +124,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <td><select id="id_tipo" name="id_tipo" class="form-control">
                             <option value="0">elije una opcion</option>
                             <?php 
-                            foreach ($tipoc as $item){
-                                echo '<option value="'.$item-> id_tipo .'">'. $item->nombre_tipo .'</option>';
+                            foreach ($tipos as $itemt){
+                                echo '<option value="'.$itemt-> id_tipo_curso .'">'. $itemt->nombre_tipo_curso .'</option>';
                             }
                             ?>
                         </select></td>
-                </tr>
-                <tr>
-                    <td>categoria de curso: </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>estado del curso: </td>
-                    <td><select id="id_estados" name="id_estados" class="form-control">
-                            <option value="0">elije una opcion</option>
-                            <?php
-                            foreach ($estados as $iteme){
-                                echo '<option value="' .$iteme->id_estado_curso. '">' .$iteme->nombre_estado. '</option>';
-                            }
-                            ?>
-                        </select></td>
-                </tr>
+                </tr> 
                 <tr>
                     <td>Profesor: </td>
                     <td><select id="id_profesor" name="id_profesor" class="form-control">
@@ -157,6 +142,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             ?>
                         </select></td>
                 </tr>
+                <tr>
+                    <td>categoria de curso: </td>
+                    <td><select id="id_categoria" name="id_categoria" class="form-control">
+                            <option value="0">elije una opcion</option>
+                            <?php
+                            foreach($categorias as $itemc){
+                                echo '<option value="'.$itemc->id_categoria_curso.'">'.$itemc->nombre_categoria.'</option>';
+                            }
+                            ?>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td>estado del curso: </td>
+                    <td><select id="id_estados" name="id_estados" class="form-control">
+                            <option value="0">elije una opcion</option>
+                            <?php
+                            foreach ($estados as $iteme){
+                                echo '<option value="' .$iteme->id_estado_curso. '">' .$iteme->descripcion_estado. '</option>';
+                            }
+                            ?>
+                        </select></td>
+                </tr>
+               
                 
                 
                 <!-- id ASistencia nulo y estado personal true o 1-- eliminar
