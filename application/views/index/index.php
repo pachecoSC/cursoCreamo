@@ -1,7 +1,7 @@
 
 
 	<!--BANNER START-->
-	<div id="banner" class="section-padding">
+        <div id="banner" class="section-padding" style="background: url('<?php echo base_url('img/banner-bg.jpg')?>') no-repeat">
 		<div class="container">
 			<div class="row">
 				<div class="jumbotron">
@@ -33,8 +33,8 @@
 			<div class="row">
                             
 				<div class="page-title text-center">
-					<h1>Our Service</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br>incididunt ut labore et dolore magna aliqua. </p>
+					<h1>Nuestros Cursos</h1>
+					<p>Todos nuestros cursos disponibles en diferentes categorias</p>
 					<hr class="pg-titl-bdr-btm"></hr>
 				</div>
                             <?php 

@@ -35,13 +35,20 @@
 			</div>
 		</div>
 	</div>
-  	<script src="js/jquery.min.js"></script>
+        <script src="<?php echo base_url('js/jquery.min.js')?>"></script>
+        <script src="<?php echo base_url('js/jquery.easing.min.js')?>"></script>
+        <script src="<?php echo base_url('js/bootstrap.min.js')?>"></script>
+        <script src="<?php echo base_url('js/jquery.mixitup.js')?>" type="text/javascript"></script>
+        <script src="<?php echo base_url('js/slick.min.js')?>" type="text/javascript"></script>
+        <script src="<?php echo base_url('js/custom.js')?>"type="text/javascript"></script>
+        <script src="<?php echo base_url('contactform/contactform')?>"></script>
+  	<!--<script src="js/jquery.min.js"></script>
   	<script src="js/jquery.easing.min.js"></script>
   	<script src="js/bootstrap.min.js"></script>
   	<script src="js/jquery.mixitup.js" type="text/javascript"></script>
 	<script type="text/javascript" src="js/slick.min.js"></script>
 	<script type="text/javascript" src="js/custom.js"></script>
-    <script src="contactform/contactform.js"></script>
+    <script src="contactform/contactform.js"></script>-->
     
 </body>
 </html>

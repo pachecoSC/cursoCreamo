@@ -1,3 +1,3 @@
 <?php $this->load->view('plantilla/header');?>
-<?php echo $contenido;?>
+<?php $contenido;?>
 <?php $this->load->view('plantilla/footer');?>
