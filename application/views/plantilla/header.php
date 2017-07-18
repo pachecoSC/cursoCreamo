@@ -1,3 +1,12 @@
+<?php
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
 <!DOCTYPE html>
 <html lang="en" class=" js no-touch">
 <head>
@@ -36,8 +45,9 @@
 			<div class="collapse navbar-collapse" id="myNavbar">
 			  <ul class="nav navbar-nav navbar-right">
 			    <li class="active"><a href="#banner">Home</a></li>
-			    <li><a href="#service">Service</a></li>
-			    <li><a href="#portfolio">Portfolio</a></li>
+			    <li><a href="#service">Categorias</a></li>
+			    <li><a href="#portfolio"><?php $url4 = url_title('Lista de Cursos','-',TRUE);
+                                                     echo anchor($url4,'ver Cursos')?></a></li>
 			    <li><a href="#about">Our Team</a></li>
 			    <li><a href="#contact">Contact Us</a></li>
 			  </ul>
