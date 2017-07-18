@@ -21,14 +21,30 @@ class Controlador_categoria extends CI_Controller{
     }
     //meotodo recive de boton de formulario y envia a modelo
     public function guardarCategoria(){
-        $paramCategoria['nombre_categoria']= $this->input->post('txtNombre');
-        $paramCategoria['foto_categoria']= $this->input->post('txtFoto');
-        //guardar los parametros y enviarlos al modelo categoia a la funcion 
-        $this->Modelo_categoria->insertarCategoria($paramCategoria);
+        //confgura donde se va a guardar las imagenes y cuales son los archivos que acepta
+        $config=[
+            "upload_path"=>"./img/uploads",
+            'allowed_types'=>"png|jpg"
+        ];
+        $this->load->library("upload",$config);
+        
+        if($this->upload->do_upload('foto_categoria')){
+            $data=array("upload_data"=> $this->upload->data());
+            
+            $paramCategoria['nombre_categoria']= $this->input->post('txtNombre');
+            $paramCategoria['foto_categoria']= $data['upload_data']['file_name'];
+            
+            $this->Modelo_categoria->insertarCategoria($paramCategoria);
+            $datos['categorias']= $this->Modelo_categoria->listarCategoria();
+            $this->load->view('categoria/index',$datos);
+            
+        }else{
+            echo $this->upload->display_errors();
+        }
+        
         
         //cargar vista con la lista de categorias
-        $datos['categorias']= $this->Modelo_categoria->listarCategoria();
-        $this->load->view('categoria/index',$datos);
+        
     }
    
 }
