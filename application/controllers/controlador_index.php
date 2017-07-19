@@ -9,15 +9,17 @@ class Controlador_index extends CI_Controller{
     //se llama a la vista
     public function index(){
         
-        //$this->load->view('principal');
+        $this->load->view('principal');
         
-        $this->load->helper('url');
+        /*$this->load->helper('url');
         $datos['categorias']= $this->Modelo_categoria->listarCategoria();
         $data['contenido']=$this->load->view('index/index',$datos);
         
         
         $this->load->view('plantilla',$data);
         
+         * 
+         */
          
     }
     

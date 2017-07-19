@@ -24,8 +24,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <?php
                 echo $error;
             ?>
+            <form action="guardarCategoria" enctype="multipart/form-data" method="post">
             
-            <?php echo form_open_multipart('controlador_categoria/guardarCategoria'); ?>
             <tr>
                     <td>Nombre: </td>
                     <td><input type="text" name="txtNombre"/></td>
@@ -40,7 +40,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                      </center></td>
                 </tr>
-              <?php form_close(); ?>
+            </form>
+            
     </table></div>
 </center>
         <script src="js/jquery.min.js"></script>
