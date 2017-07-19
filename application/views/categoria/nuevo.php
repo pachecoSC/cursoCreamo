@@ -10,12 +10,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!DOCTYPE html>
 <html lang="en">
     <head> <title>formulario de categoria</title>
-    <?php echo link_tag('css/bootstrap.min.css')?>  
+    <style type="text/css">
+        font{
+            color: #3366ff;
+            font-size: 18px;
+        }
+    </style>
+     
+<?php echo link_tag('css/bootstrap.min.css')?>  
 <?php echo link_tag('css/font-awesome.min.css')?>
 <?php echo link_tag('css/slick-team-slider.css')?>
 <?php echo link_tag('css/style.css')?>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Raleway:600,300|Josefin+Slab:400,700,600italic,600,400italic' rel='stylesheet' type='text/css'>
-	</style>
+ <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Raleway:600,300|Josefin+Slab:400,700,600italic,600,400italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
     

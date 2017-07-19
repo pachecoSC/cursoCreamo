@@ -23,18 +23,7 @@ class Controlador_categoria extends CI_Controller{
     }
     //meotodo recive de boton de formulario y envia a modelo
     public function guardarCategoria(){
-        //confgura donde se va a guardar las imagenes y cuales son los archivos que acepta
-                /*$mi_archivo=$_FILES['txtFoto']['name'];
-                $config['upload_path'] = './img/';
-                $config['file_name']=$mi_archivo;
-                $config['allowed_types'] = 'gif|jpeg|jpg|png';
-               
-                 * 
-                 */
-                 $config=[
-                   "upload_path"=>"./img/folder",
-                     'allowed_types'=>"png|jpg|jpeg|gif"
-                 ];
+                 $config=["upload_path"=>"./img/folder",'allowed_types'=>"png|jpg|jpeg|gif"];
                  $this->load->library("upload",$config);
                  if($this->upload->do_upload('foto_categoria') ){
                      $data=array("upload_data" => $this->upload->data());
@@ -43,7 +32,8 @@ class Controlador_categoria extends CI_Controller{
                     $paramCategoria['foto_categoria']= $data['upload_data']['file_name'];
                     
                     $this->Modelo_categoria->insertarCategoria($paramCategoria);
-                
+                    $datos['categorias']= $this->Modelo_categoria->listarCategoria();
+                    $this->load->view('categoria/index',$datos);
                  }else{
                      $error = array('error'=>$this->upload->display_errors());
 
@@ -51,8 +41,7 @@ class Controlador_categoria extends CI_Controller{
                      
                  }
                  
-                 $datos['categorias']= $this->Modelo_categoria->listarCategoria();
-                 $this->load->view('categoria/index',$datos);
+                 
     }
    
 }

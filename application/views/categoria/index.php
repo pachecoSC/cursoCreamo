@@ -10,10 +10,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
+    <style type="text/css">
         font{
-            color: #006666;
-            align-content: "center";
+            color: #3366ff;
+            font-size: 18px;
         }
     </style>
      
@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <tr>
                 <td><font>Nombre</font></td>
                 <td><font>Foto</font></td>
-
+ 
             </tr>    
             <!-- @var $usuarios viene del controlador usuario
                 trae el resultado de la consulta select del curso
@@ -40,12 +40,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             
             <?php 
             if ($categorias != FALSE){
-                foreach ($categorias as $item):
+                foreach ($categorias as $itemca):
             ?><tr>
-                <td><?Php echo $item->nombre_categoria;?></td>
-                <td><img src="<?php echo './img/folder/'. $item->foto_categoria; ?>"></td>
-                <!--<td><?echo ?><img src="./img/folder/"<? //$item->foto_categoria; ?>><? ?>></td>
-                <td><?php //$aux= $item->id_categoria_curso?> </td> usada para guardar el ID y luego usarlo para modificar.-->
+                <td><?Php echo $itemca->nombre_categoria;?></td>
+                <!-- envia la direccion completa . el nombre guardado en bd -->
+                <td><img src="<?php echo './img/folder/'. $itemca->foto_categoria; ?>"></td>
+                
+                <!--<td><? //$aux= $item->id_categoria_curso?> </td> usada para guardar el ID y luego usarlo para modificar.-->
             </tr>
             <?php        endforeach;
             }else{
