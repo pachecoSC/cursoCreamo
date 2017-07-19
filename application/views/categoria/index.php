@@ -10,6 +10,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        font{
+            color: #006666;
+            align-content: "center";
+        }
+    </style>
+     
 <?php echo link_tag('css/bootstrap.min.css')?>  
 <?php echo link_tag('css/font-awesome.min.css')?>
 <?php echo link_tag('css/slick-team-slider.css')?>
@@ -36,8 +43,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 foreach ($categorias as $item):
             ?><tr>
                 <td><?Php echo $item->nombre_categoria;?></td>
-                <td><?php echo $item->foto_categoria;?></td>
-                <!--<td><?php //$aux= $item->id_categoria_curso?> </td> usada para guardar el ID y luego usarlo para modificar.-->
+                <td><img src="<?php echo './img/folder/'. $item->foto_categoria; ?>"></td>
+                <!--<td><?echo ?><img src="./img/folder/"<? //$item->foto_categoria; ?>><? ?>></td>
+                <td><?php //$aux= $item->id_categoria_curso?> </td> usada para guardar el ID y luego usarlo para modificar.-->
             </tr>
             <?php        endforeach;
             }else{
