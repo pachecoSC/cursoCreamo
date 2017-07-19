@@ -21,15 +21,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
 <center><h1>Nueva Categoria</h1>
     <div class="container"><table class="table table-hover">
-            <form action="guardarCategoria" method="POST">
-                <tr>
+            <?php
+                echo $error;
+            ?>
+            
+            <?php echo form_open_multipart('controlador_categoria/guardarCategoria'); ?>
+            <tr>
                     <td>Nombre: </td>
                     <td><input type="text" name="txtNombre"/></td>
                 <tr>
                     <td>Imagen de categoria: </td>
                     <td><input type="file" name="txtFoto"></td>
-                </tr>
-                
+                </tr> 
                 <tr>
                     <td colspan="2"><center><input type="submit" class=" btn btn-primary" value="Guardar"/>
                     &nbsp;&nbsp;&nbsp;&nbsp;
@@ -37,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                      </center></td>
                 </tr>
-        </form>
+              <?php form_close(); ?>
     </table></div>
 </center>
         <script src="js/jquery.min.js"></script>
