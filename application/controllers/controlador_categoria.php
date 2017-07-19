@@ -9,7 +9,7 @@ class Controlador_categoria extends CI_Controller{
     public function __construct() {
         parent::__construct();
         $this->load->model('Modelo_categoria');
-         $this -> load -> library ( 'upload' );
+        
     }
     //envia a la pagina donde se encuentra el formulario;
     public function nuevo(){
@@ -24,37 +24,35 @@ class Controlador_categoria extends CI_Controller{
     //meotodo recive de boton de formulario y envia a modelo
     public function guardarCategoria(){
         //confgura donde se va a guardar las imagenes y cuales son los archivos que acepta
-                $mi_archivo=$_FILES['txtFoto']['name'];
-                $config['upload_path'] = './img/foder/';
+                /*$mi_archivo=$_FILES['txtFoto']['name'];
+                $config['upload_path'] = './img/';
                 $config['file_name']=$mi_archivo;
                 $config['allowed_types'] = 'gif|jpeg|jpg|png';
                
-                 $this->load->library('upload',$config);
+                 * 
+                 */
+                 $config=[
+                   "upload_path"=>"./img/folder",
+                     'allowed_types'=>"png|jpg|jpeg|gif"
+                 ];
+                 $this->load->library("upload",$config);
+                 if($this->upload->do_upload('foto_categoria') ){
+                     $data=array("upload_data" => $this->upload->data());
+                     
+                     $paramCategoria['nombre_categoria']= $this->input->post('txtNombre');
+                    $paramCategoria['foto_categoria']= $data['upload_data']['file_name'];
+                    
+                    $this->Modelo_categoria->insertarCategoria($paramCategoria);
+                
+                 }else{
+                     $error = array('error'=>$this->upload->display_errors());
+
+                     $this->load->view('categoria/nuevo',$error);
+                     
+                 }
                  
-                 $this->upload->do_upload();
-                         
-                $paramCategoria['nombre_categoria']= $this->input->post('txtNombre');
-                $paramCategoria['foto_categoria']= $config['file_name'];
-                
-                $this->Modelo_categoria->insertarCategoria($paramCategoria);
-                
-                $datos['categorias']= $this->Modelo_categoria->listarCategoria();
-                $this->load->view('categoria/index',$datos);
-
-                 /*if ( ! $this->upload->do_upload($mi_archivo))
-                 {
-                         $error = array('error'=>$this->upload->display_errors());
-
-                         $this->load->view('categoria/nuevo',$error);
-                 }
-                 else
-                 {
-                         
-                 }
-                  * 
-                  */
-        
-        
+                 $datos['categorias']= $this->Modelo_categoria->listarCategoria();
+                 $this->load->view('categoria/index',$datos);
     }
    
 }

@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <td><input type="text" name="txtNombre"/></td>
                 <tr>
                     <td>Imagen de categoria: </td>
-                    <td><input type="file" name="txtFoto"></td>
+                    <td><input type="file" name="foto_categoria"></td>
                 </tr> 
                 <tr>
                     <td colspan="2"><center><input type="submit" class=" btn btn-primary" value="Guardar"/>
