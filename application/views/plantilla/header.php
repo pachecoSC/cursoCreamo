@@ -40,16 +40,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			    <span class="icon-bar"></span>
 			    <span class="icon-bar"></span>
 			  </button>
-			  <a class="navbar-brand" href="index.html">Tempo</a>
+                            <a class="navbar-brand" href="index.php"><img src="<?php echo base_url('img/creamos_logo.png')?>"</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 			  <ul class="nav navbar-nav navbar-right">
-			    <li class="active"><a href="#banner">Home</a></li>
-			    <li><a href="#service">Categorias</a></li>
-			    <li><a href="#portfolio"><?php $url4 = url_title('Lista de Cursos','-',TRUE);
+			    <li class="li-float" class="active"><a href="#banner">Home</a></li>
+			    <li class="li-float"><a href="#service">Categorias</a></li>
+			    <li class="li-float"><a href="#portfolio"><?php $url4 = url_title('Lista de Cursos','-',TRUE);
                                                      echo anchor($url4,'ver Cursos')?></a></li>
-			    <li><a href="#about">Our Team</a></li>
-			    <li><a href="#contact">Contact Us</a></li>
+			    <li class="li-float"><a href="#about">Our Team</a></li>
+			    <li class="li-float"><a href="#contact">Contact Us</a></li>
 			  </ul>
 			</div>
 		  </div>

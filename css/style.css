@@ -8,6 +8,9 @@
 /**************************************
 link & button
 **************************************/
+li-float{
+    float: right;
+}
 .white
 {
 	color:#fff !important;
