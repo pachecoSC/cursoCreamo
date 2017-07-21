@@ -83,6 +83,28 @@ Header
 {
 	padding: 0px;
 }
+.nav-style{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+}
+.nav-style > li{
+    float: right;
+}
+.nav-style > li >a{
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.nav-style > li > a:hover:not(.active){
+    background-color: fffff0;
+}
+.active{
+    background-color: fff;
+}
 .jumbotron
 {
     background-color: transparent;
