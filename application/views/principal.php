@@ -41,11 +41,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			    <li class="active"><a href="menu-principal">Home</a></li>
 			    <li><a href="lista-de-categorias">Categorias</a></li>
                             <!-- formulario desplegable-->
-                            <?php if($this->session->userdata('login')){ ?>
+                            <?php if($this->session->userdata('login')){ ?><!--si existe loggeo entonces login es  true -->
                             <li>
-                                <a href="logout">Cerrar session</a>
+                                <p><?php echo $this->session->userdata('email'); ?></p><!-- devuelve el email del usuario -->
                             </li>
-                            <?php }else{ ?>
+                            <li>
+                                <a href="logout">Cerrar session</a><!-- muestra boton para cerrar la sesion-->
+                            </li>
+                            <?php }else{ ?><!-- de lo contrario sugiere entrar session-->
                             
                             <li class='dropdown'>
                                 <a class='dropdown-toggle' href='#' data-toggle='dropdown' style="background: none;">INICIAR SESION ... <strong class='caret'></strong></a>
