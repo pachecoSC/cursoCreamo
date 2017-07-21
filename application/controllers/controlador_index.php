@@ -5,10 +5,10 @@ class Controlador_index extends CI_Controller{
     public function __construct() {
         parent::__construct();
         $this->load->model('Modelo_categoria');
+        $this->load->library('session');
     }
     //se llama a la vista
     public function index(){
-        
         $this->load->view('principal');
         
         /*$this->load->helper('url');

@@ -75,3 +75,7 @@ $route['formulario-de-categorias']='controlador_categoria/nuevo';
 $route['lista-de-categorias']='controlador_categoria/index';
 $route['guardarCategoria']='controlador_categoria/guardarCategoria';
 //$route['translate_uri_dashes'] = FALSE;
+
+// direccion de login
+$route['loggear']= 'controlador_login/index';
+$route['logout']= 'controlador_login/logout';
