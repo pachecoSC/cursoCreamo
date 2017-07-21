@@ -45,9 +45,11 @@
 					<div class="service-box">
 						<div class="service-icon"><i class="fa fa-picture-o"></i></div>
 						<div class="service-text">
+                                                    
 							<h3><?Php echo $item->nombre_categoria;?></h3>
-							<p> <?php echo $item->foto_categoria;?></p>
-						</div>
+							<p><img src="<?php echo './img/'. $item->foto_categoria; ?>"></p>
+                                                        
+						</div><br><br>
 					</div>
 				</div>
                             <?php        endforeach;
