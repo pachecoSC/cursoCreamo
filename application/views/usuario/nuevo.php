@@ -51,7 +51,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <td>Telefono: </td>
                     <td><input type="text" name="txtTelefono" maxlength="9"></td>
                 </tr>
-                
+                <tr>
+                    <td>Cargo: </td>
+                    <td><input type="text" name="txtCargo" ></td>
+                </tr>
                 <!-- id ASistencia nulo y estado personal true o 1-- eliminar
                 -->
                 <tr>

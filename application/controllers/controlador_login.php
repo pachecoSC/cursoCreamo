@@ -20,7 +20,7 @@ class Controlador_login extends CI_Controller{
        $fila= $this->Modelo_login->obtenerUsuario($email);
        if($fila != null){//si no esta vacio.. tiene objetos
            if($fila->password == $password){// el usuario existe
-               $data= array('email'=>$email,'id'=>$fila->id_usuario,'login'=> TRUE);
+               $data= array('email'=>$email,'cargo'=>$fila->tipo_usuario,'login'=> TRUE);
                $this->session->set_userdata($data);
                header("Location: menu-principal");
            }else{

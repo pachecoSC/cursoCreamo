@@ -32,13 +32,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             ?>
             <form action="guardarCategoria" enctype="multipart/form-data" method="post">
             
-            <tr>
+                <tr>
                     <td>Nombre: </td>
                     <td><input type="text" name="txtNombre"/></td>
                 <tr>
                     <td>Imagen de categoria: </td>
                     <td><input type="file" name="foto_categoria"></td>
                 </tr> 
+                <tr>
+                    <td>Descripcion: </td>
+                    <td><input type="text" name="txtDecripcion"/></td>
+                <tr>
                 <tr>
                     <td colspan="2"><center><input type="submit" class=" btn btn-primary" value="Guardar"/>
                     &nbsp;&nbsp;&nbsp;&nbsp;

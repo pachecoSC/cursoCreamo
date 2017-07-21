@@ -33,7 +33,8 @@ class Modelo_categoria extends CI_Model{
     function insertarCategoria($paramCategoria){
         $campoCategoria= array(
             'nombre_categoria'=>$paramCategoria['nombre_categoria'],
-            'foto_categoria'=>$paramCategoria['foto_categoria']
+            'foto_categoria'=>$paramCategoria['foto_categoria'],
+            'descripcion_categoria'=>$paramCategoria['descripcion_categoria']
             );
             $this->db->insert('categoria_curso',$campoCategoria);
     }

@@ -79,13 +79,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <br>
     <br>
 <center>
-    <p><h1>Menu Usuarios</h1></p>
-    <p>  <?php 
-    $url1 = url_title('Formulario de Usuarios','-',TRUE);
-    echo anchor($url1,'Agregar Usuarios')?></p>
-    <p>  <?php 
-    $url2 = url_title('Lista de Usuarios','-',TRUE);
-     echo anchor($url2,'Ver Usuarios')?></p>
+    <?php 
+    if($this->session->userdata('login')){//pregunta si existe el sesion
+        
+        if($this->session->userdata('cargo') == 'administrador'){//pregunta por el cargo del usuario de la session
+            ?>
+        <p><h1>Menu Usuarios</h1></p>
+        <p>  <?php 
+        $url1 = url_title('Formulario de Usuarios','-',TRUE);
+        echo anchor($url1,'Agregar Usuarios')?></p>
+        <p>  <?php 
+        $url2 = url_title('Lista de Usuarios','-',TRUE);
+        echo anchor($url2,'Ver Usuarios')?></p>
+    
+    
+            <?php
+        }
+    }
+    ?>
     
     <p><h1>Menu de cursos</h1></p>
     <p>  <?php 

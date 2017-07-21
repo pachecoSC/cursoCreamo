@@ -32,6 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <tr>
                 <td><font>Nombre</font></td>
                 <td><font>Foto</font></td>
+                <td><font>Descripcion</font></td>
  
             </tr>    
             <!-- @var $usuarios viene del controlador usuario
@@ -45,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><?Php echo $itemca->nombre_categoria;?></td>
                 <!-- envia la direccion completa . el nombre guardado en bd -->
                 <td><img src="<?php echo './img/folder/'. $itemca->foto_categoria; ?>"></td>
-                
+                <td><?Php echo $itemca->descripcion_categoria;?></td>
                 <!--<td><? //$aux= $item->id_categoria_curso?> </td> usada para guardar el ID y luego usarlo para modificar.-->
             </tr>
             <?php        endforeach;

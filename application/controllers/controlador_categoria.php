@@ -30,7 +30,7 @@ class Controlador_categoria extends CI_Controller{
                      
                      $paramCategoria['nombre_categoria']= $this->input->post('txtNombre');
                     $paramCategoria['foto_categoria']= $data['upload_data']['file_name'];
-                    
+                    $paramCategoria['descripcion_categoria']= $this->input->post['txtDescripcion'];
                     $this->Modelo_categoria->insertarCategoria($paramCategoria);
                     $datos['categorias']= $this->Modelo_categoria->listarCategoria();
                     $this->load->view('categoria/index',$datos);

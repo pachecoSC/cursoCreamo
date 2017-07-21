@@ -18,6 +18,7 @@ class Controlador_usuario extends CI_Controller{
         $paramUsuario['apellidos']= $this->input->post('txtApellido');
         $paramUsuario['telefono'] = $this->input->post('txtTelefono');
         $paramUsuario['estado_usuario'] = $this->input->post('txtEstado');
+        $paramUsuario['tipo_usuario']= $this->input->post('txtCargo');
         
         $this->Modelo_usuario->insertarUsuario($paramUsuario);//envia el array al metodo en el modelo
         

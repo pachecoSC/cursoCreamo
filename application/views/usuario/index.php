@@ -39,6 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><font>Appellidos </font></td>
                 <td><font>telefono</font></td>
                 <td><font>Estado</font></td>
+                <td><fon>Cargo</font></td>
                 <td><font>Opciones</font></td>
 
             </tr>    
@@ -56,6 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><?php echo $item->apellidos;?></td>
                 <td><?php echo $item->telefono;?></td>
                 <td><?php echo $item->estado_usuario;?></td>
+                <td><?php echo $item->tipo_usuario;?></td>
                 <!--<td><?php //$aux= $item->id_usuario?> </td>-->
                 <td>
                     <?php
