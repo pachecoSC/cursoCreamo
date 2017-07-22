@@ -20,6 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </style>
      
 <?php echo link_tag('css/bootstrap.min.css')?>  
+<?php echo link_tag('css/bootstrap-theme.min.css')?>  
 <?php echo link_tag('css/font-awesome.min.css')?>
 <?php echo link_tag('css/slick-team-slider.css')?>
 <?php echo link_tag('css/style.css')?>
@@ -39,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><font>Appellidos </font></td>
                 <td><font>telefono</font></td>
                 <td><font>Estado</font></td>
-                <td><fon>Cargo</font></td>
+                <td><font>Cargo</font></td>
                 <td><font>Opciones</font></td>
 
             </tr>    
@@ -60,10 +61,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><?php echo $item->tipo_usuario;?></td>
                 <!--<td><?php //$aux= $item->id_usuario?> </td>-->
                 <td>
-                    <?php
-                        // codigo para los botones editar y eliminar
-                    ?>
-                </td>
+                    <!-- codigo para los botones editar y eliminar-->
+                    
+                    <a type="button" href="http://localhost/repositorio/trunk/controlador_usuario/editar/<?php echo $item->id_usuario;?>" class="btn btn-success" >
+                        <span class="glyphicon glyphicon-pencil"></span> Modificar</a> 
+                        <br>
+                        <a type="button" href="http://localhost/repositorio/trunk/controlador_usuario/eliminar/<?php echo $item->id_usuario;?>" class="btn btn-danger" >
+                            <span class="glyphicon glyphicon-erase" ></span>Despedir</a>
+                 </td>
             </tr>
             <?php        endforeach;
             }else{
@@ -86,6 +91,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   	<script src="js/jquery.mixitup.js" type="text/javascript"></script>
 	<script type="text/javascript" src="js/slick.min.js"></script>
 	<script type="text/javascript" src="js/custom.js"></script>
-        <script src="css/bootstrap.mis.css"></script>
+        <script src="css/bootstrap-theme.min.css"></script>
+        
 </body>
 </html>

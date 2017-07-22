@@ -29,4 +29,31 @@ class Controlador_usuario extends CI_Controller{
         $datos['usuarios'] = $this->Modelo_usuario->listarUsuario();
         $this->load->view('usuario/index',$datos);
     }
+    public function editar(){
+        $id= $this->uri->segment(3);
+        $datos['usu'] =$this->Modelo_usuario->obtenerUsuario($id);
+        $this->load->view('usuario/editar',$datos);
+    }
+    public function actualizar(){
+        $id= $this->uri->segment(3);
+        $paramUsuario['email'] = $this->input->post('txtEmail');
+        $paramUsuario['password'] = $this->input->post('txtPassword');
+        $paramUsuario['nombre_usuario'] = $this->input->post('txtNombre');
+        $paramUsuario['apellidos']= $this->input->post('txtApellido');
+        $paramUsuario['telefono'] = $this->input->post('txtTelefono');
+        $paramUsuario['estado_usuario'] = $this->input->post('txtEstado');
+        $paramUsuario['tipo_usuario']= $this->input->post('txtCargo');
+        
+        $this->Modelo_usuario->actualizarUsuario($id,$paramUsuario);
+        
+        $datos['usuarios'] = $this->Modelo_usuario->listarUsuario();
+        $this->load->view('usuario/index',$datos);
+    }
+    public function eliminar(){
+        $id= $this->uri->segment(3);
+        $this->Modelo_usuario->despedirUsusario($id);
+        
+        $datos['usuarios'] = $this->Modelo_usuario->listarUsuario();
+        $this->load->view('usuario/index',$datos);
+    }
 }
