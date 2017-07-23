@@ -65,7 +65,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     
                     <a type="button" href="http://localhost/repositorio/trunk/controlador_usuario/editar/<?php echo $item->id_usuario;?>" class="btn btn-success" >
                         <span class="glyphicon glyphicon-pencil"></span> Modificar</a> 
-                        <br>
+                        &nbsp;&nbsp;
                         <a type="button" href="http://localhost/repositorio/trunk/controlador_usuario/eliminar/<?php echo $item->id_usuario;?>" class="btn btn-danger" >
                             <span class="glyphicon glyphicon-erase" ></span>Despedir</a>
                  </td>

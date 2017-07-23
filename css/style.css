@@ -11,6 +11,17 @@ link & button
 li-float{
     float: right;
 }
+.navbar-brand-style
+{
+    position: absolute;
+    width: 200%;
+    left: 0;
+    text-align:left;
+    margin:0 auto;
+}
+.navbar-toggle-style {
+    z-index:3;
+}
 .white
 {
 	color:#fff !important;

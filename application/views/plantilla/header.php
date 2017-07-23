@@ -40,16 +40,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			    <span class="icon-bar"></span>
 			    <span class="icon-bar"></span>
 			  </button>
-                            <div style="float: left"><a class="navbar-brand" href="index.php"><img src="<?php echo base_url('img/creamos_logo.png')?>"</a></div>
+                            <div><a class="navbar-brand" href="index.php"><img src="img/creamos_logo.png"></a></div>
 			</div>                            
 			<div class="collapse navbar-collapse" id="myNavbar">
-			  <ul class="nav-style">
-                            <li class="active"><a href="#login">Login</a></li>
+			  <ul class="nav navbar-nav navbar-right">
+                            <!--li ><a href="#login">Login</a></li-->
                             <li ><a href="#contact">Contáctanos</a></li>
                             <li ><a href="#about">Nuestro Equipo</a></li>
-                            <li ><a href="#cursos">Cursos</a></li>
+                            <!--li ><a href="#cursos">Cursos</a></li-->
                             <li ><a href="#categorias">Categorias</a></li>
-			    <li ><a href="#banner">Inicio</a></li>   			   
+			    <li class="active"><a href="#banner">Inicio</a></li>  
+                            <!-- formulario despleglable-->
+                            <?php if($this->session->userdata('login')) {?>
+                                <li>
+                                <p><?php echo $this->session->userdata('email'); ?></p><!-- devuelve el email del usuario -->
+                                </li>
+                                <li>
+                                <a href="logout">Cerrar session</a><!-- muestra boton para cerrar la sesion-->
+                                </li>
+                            <?php }else{ ?>
+                                <li class='dropdown'>
+                                <a class='dropdown-toggle' href='#' data-toggle='dropdown' style="background: none;">INICIAR SESION ... <strong class='caret'></strong></a>
+                                <div class='dropdown-menu' style='padding: 10px; padding-bottom: 0px; background: none; width: 400px;'>
+                                <form action='loggear' method='post' accept-charset='UTF-8' role="form">
+                                <div class='form-group'>
+                                        <input class='form-control large' style='text-align: center;' type='text' name='txtusuario' placeholder='usuario'/>
+                                </div>
+                                <div class='form-group'> 
+                                        <input class='form-control large' style='text-align: center;' type='password' name='txtpassword' placeholder='contraseña' />
+                                </div>
+                                <div class='form-group'>
+                                        <button class='btn btn-primary' style='width: 380px;' type='submit'>INGRESAR</button>
+                                        <a class='btn btn-success' style='width: 380px;' type='submit' href="formulario-de-usuarios"> REGISTRARSE</a>
+                                </div>
+                                </form>
+                                </div>
+                                </li>
+                            <?php }?>
 			  </ul>
 			</div>
 		  </div>

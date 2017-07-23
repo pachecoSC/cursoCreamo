@@ -51,13 +51,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <td>Telefono: </td>
                     <td><input type="text" name="txtTelefono" maxlength="9"></td>
                 </tr>
-                <tr>
-                    <td>Cargo: </td>
-                    <td><input type="text" name="txtCargo" ></td>
-                </tr>
+                <!-- solo aparece para modificar en el caso de sesion activa de administrador -->
+                <?php if($this->session->userdata('login')){ ?>
+                    <tr>
+                        <td>Cargo: </td>
+                        <td><input type="text" name="txtCargo" ></td>
+                    </tr>
+                <?php } else {?>
+                    <tr>
+                        <td colspan="2"><center><input type="hidden" name="txtCargo" value="3"></center></td>
+                    
+                <?php } ?>
                 <!-- id ASistencia nulo y estado personal true o 1-- eliminar
                 -->
-                <tr>
+                
                     <!--<td> estado </td>-->
                     <td colspan="2"><input type="hidden" name="txtEstado" value="1"></td>
                 </tr>

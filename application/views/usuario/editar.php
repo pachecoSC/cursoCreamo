@@ -53,7 +53,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </tr>
                 <tr>
                     <td>Cargo: </td>
-                    <td><input type="text" name="txtCargo" value="<?php echo $usu->tipo_usuario?>"></td>
+                    <!--td><input type="text" name="txtCargo" value="<?php echo $usu->tipo_usuario?>"></td-->
+                    <td><select id="tipo_usuario" name="txtCargo" class="form-control">
+                            <option value="<?php if($usu->tipo_usuario=='1') 
+                            {?>">Administrador</option>
+                            <option value='2'>Colaborador</option>
+                            <option value='3'>Cliente</option> 
+                            <?php }else if($usu->tipo_usuario=='2'){
+                            ?>"> Colaborador</option>
+                            <option value='1'>Administrador</option>
+                            <option value='3'>Cliente</option>       
+                            <?php }else if($usu->tipo_usuario=='3'){
+                            ?> "> Cliente</option>
+                            <option value='1'>Administrador</option>
+                            <option value='2'>Colaborador</option>         
+                            <?php } ?>                            
+                        </select></td>
                 </tr>
                 <!-- id ASistencia nulo y estado personal true o 1-- eliminar
                 -->

@@ -34,11 +34,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			    <span class="icon-bar"></span>
 			    <span class="icon-bar"></span>
 			  </button>
-			  <a class="navbar-brand" href="menu-principal">Pagina principal</a>
+			  <a class="navbar-brand-style" href="index.php"><img src="<?php echo base_url('img/creamos_logo.png')?>"</a></div
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 			  <ul class="nav navbar-nav navbar-right">
-			    <li class="active"><a href="menu-principal">Home</a></li>
+                            <li ><a href="#contact">Contáctanos</a></li>
+                            <li ><a href="#about">Nuestro Equipo</a></li>
+                            <!--li ><a href="#cursos">Cursos</a></li-->
+                            <li ><a href="#categorias">Categorias</a></li>
+			    <li class="active"><a href="#banner">Inicio</a></li> 
 			    <li><a href="lista-de-categorias">Categorias</a></li>
                             <!-- formulario desplegable-->
                             <?php if($this->session->userdata('login')){ ?><!--si existe loggeo entonces login es  true -->
@@ -82,7 +86,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php 
     if($this->session->userdata('login')){//pregunta si existe el sesion
         
-        if($this->session->userdata('cargo') == 'administrador'){//pregunta por el cargo del usuario de la session
+        if($this->session->userdata('cargo') == '1'){//pregunta por el cargo del usuario de la session
             ?>
         <p><h1>Menu Usuarios</h1></p>
         <p>  <?php 
