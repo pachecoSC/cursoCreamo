@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <style type="text/css">
         font{
             color: #3366ff;
@@ -21,13 +21,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php echo link_tag('css/font-awesome.min.css')?>
 <?php echo link_tag('css/slick-team-slider.css')?>
 <?php echo link_tag('css/style.css')?>
+ 
  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Raleway:600,300|Josefin+Slab:400,700,600italic,600,400italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
     
     
 <center>
-    <h1>Lista de Cursos</h1>
+    <h1>Lista de Cursos por Categorias</h1>
     <div class="container"><table class="table table-hover">
             <tr>
                 <td><font>Nombre</font></td>
@@ -38,26 +39,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><font>Foto de curso </font></td>
                 <td><font>Tipo de curso </font></td>
                 <td><font>Profesor </font></td>
-                <td><font>Categoria de curso </font></td>
                 <td><font>Estado de curso </font></td>
-            </tr>    
-            <!-- @var $cursitos viene de la clase principal
+            </tr>      
+            <!-- @var $usuarios viene del controlador usuario
                 trae el resultado de la consulta select del curso
             -->
+            
             <?php 
-            if ($cursos != NULL){
-                foreach ($cursos as $itemcu):
+            if ($curCat != NULL){
+                foreach ($curCat as $itemCa):
             ?><tr>
-                <td><?Php echo $itemcu->nombre;?></td>
-                <td><?Php echo $itemcu->descripcion;?></td>
-                <td><?Php echo $itemcu->enlace;?></td>
-                <td><?Php echo $itemcu->precio;?></td>
-                <td><?Php echo $itemcu->horas;?></td>
-                <td><img src="<?= base_url().'img/'.$itemcu->foto;?>"></td>
-                <td><?Php echo $itemcu->tipo;?></td>
-                <td><?Php echo $itemcu->profesor;?></td>
-                <td><?Php echo $itemcu->categoria;?></td>
-                <td><?Php echo $itemcu->estado;?></td>
+                <td><?Php echo $itemCa->nombre;?></td>
+                <td><?Php echo $itemCa->descripcion;?></td>
+                <td><?Php echo $itemCa->enlace;?></td>
+                <td><?Php echo $itemCa->precio;?></td>
+                <td><?Php echo $itemCa->horas;?></td>
+                <td><img src="<?= base_url().'img/'.$itemCa->foto;?>"></td>
+                <td><?Php echo $itemCa->tipo;?></td>
+                <td><?Php echo $itemCa->profesor;?></td>
+                <td><?Php echo $itemCa->estado;?></td>
                 
                 
             </tr>
@@ -72,12 +72,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </center>
 <center>
     <?php 
-    $url = url_title('Menu Principal','-',TRUE);
-    ?><h1><?php echo anchor($url,'volver Menu')?></h1>
+    $url = url_title("<?=base_url()?>controlador_categoria/",'-',TRUE);
+    ?><h1><?php echo anchor($url,'volver')?></h1>
     
 </center>
-<!-- modificar con los campos actuales -->
-
         <script src="js/jquery.min.js"></script>
   	<script src="js/jquery.easing.min.js"></script>
   	<script src="js/bootstrap.min.js"></script>

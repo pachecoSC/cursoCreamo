@@ -51,6 +51,6 @@ class Modelo_usuario extends CI_Model{
     }
     
     function despedirUsusario($id){
-        $consulta = $this->db->query('update usuario set estado_usuario=0 where id_usuario='.$id);
+        $this->db->query('update usuario set estado_usuario=0 where id_usuario='.$id);
     }
 }

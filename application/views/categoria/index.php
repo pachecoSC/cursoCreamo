@@ -21,6 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php echo link_tag('css/font-awesome.min.css')?>
 <?php echo link_tag('css/slick-team-slider.css')?>
 <?php echo link_tag('css/style.css')?>
+<?= link_tag('') ?>    
  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Raleway:600,300|Josefin+Slab:400,700,600italic,600,400italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -33,6 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><font>Nombre</font></td>
                 <td><font>Foto</font></td>
                 <td><font>Descripcion</font></td>
+                <td><font>Ver Cursos</font></td>
  
             </tr>    
             <!-- @var $usuarios viene del controlador usuario
@@ -45,8 +47,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             ?><tr>
                 <td><?Php echo $itemca->nombre_categoria;?></td>
                 <!-- envia la direccion completa . el nombre guardado en bd -->
-                <td><img src="<?php echo './img/folder/'. $itemca->foto_categoria; ?>"></td>
+                <td><img src="<?= base_url().'img/folder/'. $itemca->foto_categoria; ?>"></td>
                 <td><?Php echo $itemca->descripcion_categoria;?></td>
+                <td><a type="button" href="<?= base_url().'controlador_categoria/verCursos/'.$itemca->nombre_categoria;?>" class="btn btn-success" >
+                        <span class="icon-edit"></span> Ver Cursos</a><td> 
                 <!--<td><? //$aux= $item->id_categoria_curso?> </td> usada para guardar el ID y luego usarlo para modificar.-->
             </tr>
             <?php        endforeach;
@@ -70,6 +74,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   	<script src="js/jquery.mixitup.js" type="text/javascript"></script>
 	<script type="text/javascript" src="js/slick.min.js"></script>
 	<script type="text/javascript" src="js/custom.js"></script>
-        <script src="css/bootstrap.mis.css"></script>
+        <script src="css/font-awesome.min.css"></script>
 </body>
 </html>

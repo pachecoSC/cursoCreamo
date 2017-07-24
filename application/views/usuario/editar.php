@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
     <center><h1>Actualizar Personal</h1>
     <div class="container"><table class="table table-hover">
-            <form action="http://localhost/repositorio/trunk/controlador_usuario/actualizar/<?php echo $usu->id_usuario;?>" method="POST">
+            <form action="<?= base_url() . 'controlador_usuario/actualizar/' . $usu->id_usuario;?>" method="POST">
                 <tr>
                     <td>Email: </td>
                     <td><input type="text" name="txtEmail" value="<?php echo $usu->email?>"/></td>
@@ -79,7 +79,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 
                 <tr>
                     <td colspan="2"><center><input type="submit" class=" btn btn-primary" value="Guardar"/>
-                    &nbsp;&nbsp;<a type="submit"  class="btn btn-danger" href= "../index">Cancelar</a> </center></td>
+                    &nbsp;&nbsp;<a type="submit"  class="btn btn-danger" href= "<?=base_url()?>controlador_usuario/">Cancelar</a> </center></td>
                     
                 </tr>
         </form>

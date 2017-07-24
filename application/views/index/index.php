@@ -7,7 +7,8 @@
 				<div class="jumbotron">
 				  <h1 class="small">Welcome To <span class="bold">Tempo</span></h1>
 				  <p class="big">Multipurpose HTML5 Bootstrap template.</p>
-				  <a href="#" class="btn btn-banner">Learn More<i class="fa fa-send"></i></a>
+                                  
+                                  <a href="#" class="btn btn-banner"><span></span>Learn More<i class="fa fa-send"></i></a>
 				</div>
 			</div>
 		</div>

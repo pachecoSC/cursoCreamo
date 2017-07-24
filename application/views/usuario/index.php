@@ -58,15 +58,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><?php echo $item->apellidos;?></td>
                 <td><?php echo $item->telefono;?></td>
                 <td><?php echo $item->estado_usuario;?></td>
-                <td><?php echo $item->tipo_usuario;?></td>
+                <td><?php if($item->tipo_usuario == '1'){
+                    echo "Administrador";
+                }else if ($item->tipo_usuario =='2'){
+                    echo "Colaborador";
+                }else{
+                    echo "Cliente";
+                }
+                
+                
+                ?>
+                </td>
                 <!--<td><?php //$aux= $item->id_usuario?> </td>-->
                 <td>
                     <!-- codigo para los botones editar y eliminar-->
                     
-                    <a type="button" href="http://localhost/repositorio/trunk/controlador_usuario/editar/<?php echo $item->id_usuario;?>" class="btn btn-success" >
+                    <a type="button" href="<?= base_url()?>controlador_usuario/editar/<?php echo $item->id_usuario;?>" class="btn btn-success" >
                         <span class="glyphicon glyphicon-pencil"></span> Modificar</a> 
                         &nbsp;&nbsp;
-                        <a type="button" href="http://localhost/repositorio/trunk/controlador_usuario/eliminar/<?php echo $item->id_usuario;?>" class="btn btn-danger" >
+                        <a type="button" href="<?= base_url()?>controlador_usuario/eliminar/<?php echo $item->id_usuario;?>" class="btn btn-danger" >
                             <span class="glyphicon glyphicon-erase" ></span>Despedir</a>
                  </td>
             </tr>

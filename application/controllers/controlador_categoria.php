@@ -40,8 +40,13 @@ class Controlador_categoria extends CI_Controller{
                      $this->load->view('categoria/nuevo',$error);
                      
                  }
-                 
-                 
+    }
+    
+    public function verCursos(){
+        $idca= $this->uri->segment(3);
+        $data['curCat']= $this->Modelo_categoria->listarCursos($idca);
+        //$datos['curCat'] =$this->Modelo_categoria->listarCursosCategoria($id);
+        $this->load->view('categoria/cursosCategoria',$data);
     }
    
 }
