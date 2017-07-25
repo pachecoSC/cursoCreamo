@@ -24,6 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php echo link_tag('css/font-awesome.min.css')?>
 <?php echo link_tag('css/slick-team-slider.css')?>
 <?php echo link_tag('css/style.css')?>
+ <link rel=”stylesheet” href=”css/font-awesome.min.css“>   
  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Raleway:600,300|Josefin+Slab:400,700,600italic,600,400italic' rel='stylesheet' type='text/css'>
 </head>
 </head>
@@ -74,10 +75,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <!-- codigo para los botones editar y eliminar-->
                     
                     <a type="button" href="<?= base_url()?>controlador_usuario/editar/<?php echo $item->id_usuario;?>" class="btn btn-success" >
-                        <span class="glyphicon glyphicon-pencil"></span> Modificar</a> 
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modificar</a> 
                         &nbsp;&nbsp;
                         <a type="button" href="<?= base_url()?>controlador_usuario/eliminar/<?php echo $item->id_usuario;?>" class="btn btn-danger" >
-                            <span class="glyphicon glyphicon-erase" ></span>Despedir</a>
+                            <i class="fa fa-trash-o" aria-hidden="true"></i></i>Despedir</a>
                  </td>
             </tr>
             <?php        endforeach;

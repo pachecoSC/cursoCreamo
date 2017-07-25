@@ -5,6 +5,7 @@ class Controlador_index extends CI_Controller{
     public function __construct() {
         parent::__construct();
         $this->load->model('Modelo_categoria');
+        $this->load->model('Modelo_profesor');
         $this->load->library('session');
         $this->load->model('Modelo_login');
     }
@@ -13,21 +14,21 @@ class Controlador_index extends CI_Controller{
 
          //$this->load->view('principal');
        
-        $this->load->helper('url');
+
+       /* $this->load->helper('url');// en el autoload se cargaron los helper.. form, url, html
 
          $this->load->view('principal');
-       
-       /* $this->load->helper('url');
-
+       =======
+        */
         $datos['categorias']= $this->Modelo_categoria->listarCategoria();
+        $datos['profesores']= $this->Modelo_profesor->listarProfesor();
         $datos['contenido']=$this->load->view('index/index',$datos);
         
         
         $this->load->view('plantilla',$datos);
         
 
-=======
-        */
+
 
          
     }

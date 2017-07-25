@@ -1,31 +1,27 @@
-<?php
+<?php $this->load->view('plantilla/header');?>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head> 
-    <style type="text/css">
-        font{
-            color: #3366ff;
-            font-size: 18px;
-        }
-    </style>
-     
-<?php echo link_tag('css/bootstrap.min.css')?>  
-<?php echo link_tag('css/font-awesome.min.css')?>
-<?php echo link_tag('css/slick-team-slider.css')?>
-<?php echo link_tag('css/style.css')?>
- <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Raleway:600,300|Josefin+Slab:400,700,600italic,600,400italic' rel='stylesheet' type='text/css'>
-</head>
-<body>
-    
-    
+<br><br><br><br><br><br>
+
+<div id="cursosCategorias" class="section-padding">
+		<div class="container">
+			<div class="row">
+                            
+				<div class="page-title text-center">
+                                    
+					<h1> Curso - <?Php echo $curOb->nombre;?></h1>
+					<p></p>
+					<hr class="pg-titl-bdr-btm"></hr>
+				</div>
+                            
+				
+			</div>
+		</div>
+	</div>
+
+
+<?php $this->load->view('plantilla/footer');?>
+
+
 <center>
     <h1>Lista de Cursos</h1>
     <div class="container"><table class="table table-hover">

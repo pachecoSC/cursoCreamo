@@ -6,9 +6,6 @@
  * and open the template in the editor.
  */
 class Modelo_curso extends CI_Model{
-    public function __construct() {
-        parent::__construct();
-    }
     
     function listarCurso(){
         $this->db->order_by('nombre_curso','asc');
@@ -21,7 +18,7 @@ class Modelo_curso extends CI_Model{
         return $consulta->result();
     }
     
-    /*function obtenerCurso($id){
+    function obtenerCurso($id){
         $this->db->where('id_curso',$id);
         $consulta = $this->db->get('curso');
         if ($consulta->num_rows() > 0) {
@@ -29,7 +26,7 @@ class Modelo_curso extends CI_Model{
         }else{
             return FALSE;
         }
-    }*/
+    }
     function insertarCurso($paramCurso){
         $campoCurso=array(
             'nombre_curso'=>$paramCurso['nombre_curso'],
@@ -81,6 +78,17 @@ class Modelo_curso extends CI_Model{
         if($consulta->num_rows()>0){
             return $consulta->result();
         }
+    }
+    
+    function mostrarCurso($idcu){
+        $consulta= $this->db->query('select c.descripcion_curso as descripcion,c.enlace as enlace,c.precio as precio,c.cantidad_horas as horas,
+                    c.foto_curso as foto,tc.nombre_tipo_curso as tipo,p.nombre_profesor as profesor,ca.nombre_categoria as categoria,ec.descripcion_estado as estado
+                    from curso as c inner join tipo_curso as tc on c.tipo_curso_id_tipo_curso=tc.id_tipo_curso
+                    inner join profesor as p on c.profesor_id_profesor=p.id_profesor
+                    inner join categoria_curso as ca on c.categoria_curso_id_categoria_curso=ca.id_categoria_curso
+                    inner join estado_curso as ec on c.estado_curso_id_estado_curso=ec.id_estado_curso
+                    where c.id_curso="'.$idcu.'"');
+        return $consulta->result();
     }
 }
 

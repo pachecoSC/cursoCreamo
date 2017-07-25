@@ -40,8 +40,8 @@ class Modelo_categoria extends CI_Model{
     }
     
     function listarCursos($ida){
-        $consulta= $this->db->query('select c.nombre_curso as nombre,c.descripcion_curso as descripcion,c.enlace as enlace,c.precio as precio,c.cantidad_horas as horas,
-                    c.foto_curso as foto,tc.nombre_tipo_curso as tipo,p.nombre_profesor as profesor,ec.descripcion_estado as estado
+        $consulta= $this->db->query('select c.id_curso as id_cu,c.nombre_curso as nombre,c.descripcion_curso as descripcion,c.enlace as enlace,c.precio as precio,c.cantidad_horas as horas,
+                    c.foto_curso as foto_cu,tc.nombre_tipo_curso as tipo,p.nombre_profesor as profesor,ec.descripcion_estado as estado
                     from curso as c inner join tipo_curso as tc on c.tipo_curso_id_tipo_curso=tc.id_tipo_curso
                     inner join profesor as p on c.profesor_id_profesor=p.id_profesor
                     inner join categoria_curso as ca on c.categoria_curso_id_categoria_curso=ca.id_categoria_curso

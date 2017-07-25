@@ -5,10 +5,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="jumbotron">
-				  <h1 class="small">Welcome To <span class="bold">Tempo</span></h1>
-				  <p class="big">Multipurpose HTML5 Bootstrap template.</p>
+				  <h1 class="small">Bienvenidos a <span class="bold">CreamosLa</span></h1>
+				  <p class="big">lema de institucion(ejmplo).</p>
                                   
-                                  <a href="#" class="btn btn-banner"><span></span>Learn More<i class="fa fa-send"></i></a>
+                                  <a href="#" class="btn btn-banner"><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i>  Leer mas</a>
 				</div>
 			</div>
 		</div>
@@ -19,8 +19,8 @@
 	<div class="cta-1">
 		<div class="container">
 			<div class="row text-center white">
-				<h1 class="cta-title">Say Hey to Tempo!!</h1>
-				<p class="cta-sub-title">Full Responsive HTML5 Bootstrap Template.</p>
+				<h1 class="cta-title">Casa de estudios</h1>
+				<p class="cta-sub-title">“La educación es un proceso que no termina nunca” Josefina Aldecoa.</p>
 			</div>
 		</div>
 	</div>
@@ -44,13 +44,14 @@
                             ?>
 				<div class="col-md-4">
 					<div class="service-box">
-						<div class="service-icon"><i class="fa fa-picture-o"></i></div>
 						<div class="service-text">
-                                                    
-							<h3><?Php echo $item->nombre_categoria;?></h3>
-							<p><img src="<?php echo './img/'. $item->foto_categoria; ?>"></p>
-                                                        
-						</div><br><br>
+                                                    <p><img class="responsive" src="<?= base_url().'img/categoria/'. $item->foto_categoria; ?>"></p>
+                                                    <center><h3><?Php echo $item->nombre_categoria;?>&nbsp;&nbsp;
+                                                    <a href="<?= base_url().'controlador_categoria/verCursos/'.$item->nombre_categoria;?>">
+                                                    <i class="fa fa-angle-double-right fa-lg" aria-hidden="true"></i></a> 
+                                                    </h3></center>
+                                                    &nbsp;&nbsp;&nbsp;
+						</div>
 					</div>
 				</div>
                             <?php        endforeach;

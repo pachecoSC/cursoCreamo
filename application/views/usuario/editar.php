@@ -24,6 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php echo link_tag('css/font-awesome.min.css')?>
 <?php echo link_tag('css/slick-team-slider.css')?>
 <?php echo link_tag('css/style.css')?>
+ <link rel=”stylesheet” href=”tucarpeta/css/font-awesome.min.css“>
  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Raleway:600,300|Josefin+Slab:400,700,600italic,600,400italic' rel='stylesheet' type='text/css'>
 </head>
 </head>
@@ -78,6 +79,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </tr>
                 
                 <tr>
+                    
                     <td colspan="2"><center><input type="submit" class=" btn btn-primary" value="Guardar"/>
                     &nbsp;&nbsp;<a type="submit"  class="btn btn-danger" href= "<?=base_url()?>controlador_usuario/">Cancelar</a> </center></td>
                     
