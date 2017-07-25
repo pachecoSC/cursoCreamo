@@ -1,3 +1,6 @@
+
+<?php $this->load->view('plantilla/header');?>
+
 <?php
 
 /* 
@@ -27,6 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
     
     
+>>>>>>> .r42
 <center>
     <h1>Lista de Categorias</h1>
     <div class="container"><table class="table table-hover">
@@ -68,6 +72,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     ?><h1><?php echo anchor($url,'volver Menu')?></h1>
     
 </center>
+<<<<<<< .mine
+<?php $this->load->view('plantilla/footer');?>=======
         <script src="js/jquery.min.js"></script>
   	<script src="js/jquery.easing.min.js"></script>
   	<script src="js/bootstrap.min.js"></script>
@@ -77,3 +83,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script src="css/font-awesome.min.css"></script>
 </body>
 </html>
+>>>>>>> .r42

@@ -1,30 +1,4 @@
-<?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head> 
-    <style type="text/css">
-        font{
-            color: #3366ff;
-            font-size: 18px;
-        }
-    </style>
-     
-<?php echo link_tag('css/bootstrap.min.css')?>  
-<?php echo link_tag('css/font-awesome.min.css')?>
-<?php echo link_tag('css/slick-team-slider.css')?>
-<?php echo link_tag('css/style.css')?>
- <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Raleway:600,300|Josefin+Slab:400,700,600italic,600,400italic' rel='stylesheet' type='text/css'>
-</head>
-</head>
-<body>
+<?php $this->load->view('plantilla/header');?>
     <div class="main-navigation navbar-fixed-top">
 		<nav class="navbar navbar-default">
 			<div class="container">
@@ -126,14 +100,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <p><?php
     $url8= url_title('Lista de Categorias','-',TRUE);
     echo anchor($url8,'ver Categorias');?></p>
-</center>
-
-        <script src="js/jquery.min.js"></script>
-  	<script src="js/jquery.easing.min.js"></script>
-  	<script src="js/bootstrap.min.js"></script>
-  	<script src="js/jquery.mixitup.js" type="text/javascript"></script>
-	<script type="text/javascript" src="js/slick.min.js"></script>
-	<script type="text/javascript" src="js/custom.js"></script>
-        <script src="css/bootstrap.mis.css"></script>
-</body>
-</html>
+<?php $this->load->view('plantilla/footer');?>

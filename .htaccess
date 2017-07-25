@@ -6,7 +6,7 @@ RewriteEngine on
 #-------------------------------------------------------------------------
 #Eliminar index.php
 #-------------------------------------------------------------------------
-RewriteCond $1 !^(index\.php|robots\.txt|sitemap\.xml|css|img|js|contactform)
+RewriteCond $1 !^(index\.php|robots\.txt|sitemap\.xml|css|img|js|contactform|fonts)
 RewriteRule ^(.*)$ index.php/$1 [L]
 #--------------------------------------------------------------------------
 #ocultar la extencion 
