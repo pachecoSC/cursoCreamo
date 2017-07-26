@@ -9,6 +9,11 @@ class Controlador_index extends CI_Controller{
         $this->load->library('session');
         $this->load->model('Modelo_login');
     }
+    
+    public function mantenimiento(){
+        $this->load->view('principal');
+    }
+
     //se llama a la vista
     public function index(){
 

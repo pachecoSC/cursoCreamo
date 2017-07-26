@@ -1,5 +1,6 @@
-
 <?php $this->load->view('plantilla/header');?>
+
+<br><br><br><br><br><br>
 
 <center>
     <h1>Lista de Categorias</h1>
@@ -37,3 +38,5 @@
 
         </table></div>
 </center>
+
+<?php $this->load->view('plantilla/footer');?>

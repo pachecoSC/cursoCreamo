@@ -72,16 +72,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <p><?php echo $this->session->userdata('email'); ?></p><!-- devuelve el email del usuario -->
                                 </li>
                                 <li>
-                                <a href="logout">Cerrar session</a><!-- muestra boton para cerrar la sesion-->
+                                    <a href="<?= base_url();?>controlador_login/logout/">Cerrar session</a><!-- muestra boton para cerrar la sesion-->
                                 </li>
+                                <?php if($this->session->userdata('cargo')=="1"){ ?>
                                 <li>
-                                <a href="">Mantenimiento</a><!-- muestra menu solo administrador-->
+                                    <a href="<?= base_url();?>controlador_index/mantenimiento/">Mantenimiento</a><!-- muestra menu solo administrador-->
                                 </li>
+                                <?php }?>
                             <?php }else{ ?>
                                 <li class='dropdown'>
                                 <a class='dropdown-toggle' href='#' data-toggle='dropdown' style="background: none;">INICIAR SESION ... <strong class='caret'></strong></a>
                                 <div class='dropdown-menu' style='padding: 10px; padding-bottom: 0px; background: none; width: 400px;'>
-                                <form action='loggear' method='post' accept-charset='UTF-8' role="form">
+                                    <form action='<?= base_url();?>controlador_login/' method='post' accept-charset='UTF-8' role="form">
                                 <div class='form-group'>
                                         <input class='form-control large' style='text-align: center;' type='text' name='txtusuario' placeholder='usuario'/>
                                 </div>

@@ -38,5 +38,4 @@
 		</div>
 	</div>
 
-
 <?php $this->load->view('plantilla/footer');?>

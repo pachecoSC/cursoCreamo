@@ -32,12 +32,18 @@
 	<div id="service" class="section-padding">
 		<div class="container">
 			<div class="row">
-                            
+                            <div class="text-right">
+                                <?php if ($this->session->userdata('cargo') == "1") { ?>
+                                    <a tipe="submit" class="btn btn-success"  href="<?= base_url(); ?>controlador_curso/nuevo/">Nuevo curso</a><!-- muestra menu solo administrador-->
+                                <?php } ?>
+                            </div>
 				<div class="page-title text-center">
 					<h1>Nuestros Cursos</h1>
 					<p>Todos nuestros cursos disponibles en diferentes categorias</p>
 					<hr class="pg-titl-bdr-btm"></hr>
+                                        
 				</div>
+                                
                             <?php 
                             if ($categorias != FALSE){
                             foreach ($categorias as $item):
@@ -70,16 +76,16 @@
 		<div class="container">
 			<div class="row">
 				<div class="page-title text-center">
-					<h1>Our Privious Works</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br>incididunt ut labore et dolore magna aliqua. </p>
+					<h1>Quienes somos</h1>
+					<p>conosca los detalles de nuestra institucion  <br>mision, vision, instalaciones. </p>
 					<hr class="pg-titl-bdr-btm"></hr>
 				</div>
 				<div class="port-sec">
 					<div class="col-md-12 fil-btn text-center">
-							<div class="filter wrk-title active" data-filter="all">Show All</div>
-							<div class="filter wrk-title" data-filter=".category-1">Design</div>
-							<div class="filter wrk-title" data-filter=".category-2">Development</div>
-							<div class="filter wrk-title lst-cld" data-filter=".category-3">SEO</div>
+							<div class="filter wrk-title active" data-filter="all">Ubicacion</div>
+							<div class="filter wrk-title" data-filter=".category-1">Mision</div>
+							<div class="filter wrk-title" data-filter=".category-2">Vision</div>
+							<div class="filter wrk-title lst-cld" data-filter=".category-3">instalaciones</div>
 					</div>
 					<div id="Container">
 								<div class="filimg mix category-1 category-3 col-md-4 col-sm-4 col-xs-12" data-myorder="2">
@@ -110,8 +116,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="page-title text-center">
-					<h1>Meet Our Team</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br>incididunt ut labore et dolore magna aliqua. </p>
+					<h1>Conoce nuestro equipo</h1>
+					<p>maestros calificados, etc <br>trabajando . </p>
 					<hr class="pg-titl-bdr-btm"></hr>
 				</div>
 				<div class="autoplay">

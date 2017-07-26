@@ -22,12 +22,12 @@ class Controlador_login extends CI_Controller{
            if($fila->password == $password){// el usuario existe
                $data= array('email'=>$email,'cargo'=>$fila->tipo_usuario,'login'=> TRUE);
                $this->session->set_userdata($data);
-               header("Location: menu-principal");
+               header("Location:". base_url()."controlador_index");
            }else{
-               echo "<script language='javascript'>"; 
-               echo "alert('Error!! contraseña erronea.')"; 
-               echo "</script>";
-               header("Location:". base_url());
+               print '<script language="javaScript">'; 
+               print 'alert("Error!! contraseña erronea.")'; 
+               print '</script>';
+               header("Location:". base_url()."controlador_index/");
                //http://localhost/repositorio/trunk/
            }
        }else{
@@ -37,6 +37,6 @@ class Controlador_login extends CI_Controller{
    }
    public function logout(){
     $this->session->sess_destroy();
-    header("Location:". base_url());
+    header("Location:". base_url()."/controlador_index/");
    }
 }

@@ -1,36 +1,7 @@
-<?php
+<?php $this->load->view('plantilla/header');?>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head> 
-   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">  
-    <style type="text/css">
-        font{
-            color: #3366ff;
-            font-size: 18px;
-        }
-    </style>
-     
-<?php echo link_tag('css/bootstrap.min.css')?>  
-<?php echo link_tag('css/bootstrap-theme.min.css')?>  
-<?php echo link_tag('css/font-awesome.min.css')?>
-<?php echo link_tag('css/slick-team-slider.css')?>
-<?php echo link_tag('css/style.css')?>
- <link rel=”stylesheet” href=”css/font-awesome.min.css“>   
- <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Raleway:600,300|Josefin+Slab:400,700,600italic,600,400italic' rel='stylesheet' type='text/css'>
-</head>
-</head>
-<body>
-    
-    
+<br><br><br><br><br><br>
+
 <center>
     <h1>Lista de Usuarios</h1>
     <div class="container"><table class="table table-hover">
@@ -96,13 +67,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     ?><h1><?php echo anchor($url,'volver Menu')?></h1>
     
 </center>
-        <script src="js/jquery.min.js"></script>
-  	<script src="js/jquery.easing.min.js"></script>
-  	<script src="js/bootstrap.min.js"></script>
-  	<script src="js/jquery.mixitup.js" type="text/javascript"></script>
-	<script type="text/javascript" src="js/slick.min.js"></script>
-	<script type="text/javascript" src="js/custom.js"></script>
-        <script src="css/bootstrap-theme.min.css"></script>
-        
-</body>
-</html>
+
+<?php $this->load->view('plantilla/footer');?>

@@ -22,8 +22,7 @@ class Controlador_usuario extends CI_Controller{
         
         $this->Modelo_usuario->insertarUsuario($paramUsuario);//envia el array al metodo en el modelo
         
-        $datos['usuarios'] = $this->Modelo_usuario->listarUsuario();
-        $this->load->view('usuario/index',$datos);
+        header("Location:". base_url()."controlador_index/");
     }
     public function index(){
         $datos['usuarios'] = $this->Modelo_usuario->listarUsuario();
