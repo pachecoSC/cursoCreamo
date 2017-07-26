@@ -20,8 +20,8 @@ class Controlador_curso extends CI_Controller{
     }
     public function mostrarCurso(){
         $idcu= $this->uri->segment(3);
-        $data['curOb'] = $this->Modelo_curso->mostrarCurso($idcu);
-        $data['nombre'] = $this->Modelo_curso->obtenerCurso($idcu);
+        $data['nombre'] = $this->Modelo_curso->obtenerNombreCurso($idcu);
+        $data['cursos'] = $this->Modelo_curso->mostrarCurso($idcu);
         $this->load->view('curso/index',$data);
     }
     //pagina que carga el formulario

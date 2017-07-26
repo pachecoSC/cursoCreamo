@@ -5,10 +5,16 @@
 <div id="cursosCategorias" class="section-padding">
 		<div class="container">
 			<div class="row">
-                            
 				<div class="page-title text-center">
-                                    
-					<h1> Curso - <?Php echo $curOb->nombre;?></h1>
+                                    <h1> 
+                                        <?php
+                                        if ($nombre != FALSE) {
+                                            foreach ($nombre as $nom) {
+                                                echo $nom->nombre_curso;
+                                            }
+                                        }
+                                        ?>
+                                    </h1>
 					<p></p>
 					<hr class="pg-titl-bdr-btm"></hr>
 				</div>
@@ -19,14 +25,12 @@
 	</div>
 
 
-<?php $this->load->view('plantilla/footer');?>
+
 
 
 <center>
-    <h1>Lista de Cursos</h1>
     <div class="container"><table class="table table-hover">
             <tr>
-                <td><font>Nombre</font></td>
                 <td><font>Descripcion </font></td>
                 <td><font>Enlace </font></td>
                 <td><font>Precio </font></td>
@@ -44,7 +48,6 @@
             if ($cursos != NULL){
                 foreach ($cursos as $itemcu):
             ?><tr>
-                <td><?Php echo $itemcu->nombre;?></td>
                 <td><?Php echo $itemcu->descripcion;?></td>
                 <td><?Php echo $itemcu->enlace;?></td>
                 <td><?Php echo $itemcu->precio;?></td>
@@ -66,20 +69,6 @@
 
         </table></div>
 </center>
-<center>
-    <?php 
-    $url = url_title('Menu Principal','-',TRUE);
-    ?><h1><?php echo anchor($url,'volver Menu')?></h1>
-    
-</center>
-<!-- modificar con los campos actuales -->
 
-        <script src="js/jquery.min.js"></script>
-  	<script src="js/jquery.easing.min.js"></script>
-  	<script src="js/bootstrap.min.js"></script>
-  	<script src="js/jquery.mixitup.js" type="text/javascript"></script>
-	<script type="text/javascript" src="js/slick.min.js"></script>
-	<script type="text/javascript" src="js/custom.js"></script>
-        <script src="css/bootstrap.mis.css"></script>
-</body>
-</html>
+
+<?php $this->load->view('plantilla/footer');?>

@@ -18,15 +18,7 @@ class Modelo_curso extends CI_Model{
         return $consulta->result();
     }
     
-    function obtenerCurso($id){
-        $this->db->where('id_curso',$id);
-        $consulta = $this->db->get('curso');
-        if ($consulta->num_rows() > 0) {
-            return $consulta->result();
-        }else{
-            return FALSE;
-        }
-    }
+    
     function insertarCurso($paramCurso){
         $campoCurso=array(
             'nombre_curso'=>$paramCurso['nombre_curso'],
@@ -90,5 +82,14 @@ class Modelo_curso extends CI_Model{
                     where c.id_curso="'.$idcu.'"');
         return $consulta->result();
     }
+    function obtenerNombreCurso($id){
+        $consulta= $this->db->query('select nombre_curso from curso where id_curso="'.$id.'"');
+        if($consulta->num_rows()>0){
+            return $consulta->result();
+        }else{
+            return FALSE;
+        }
+    }
+    
 }
 
