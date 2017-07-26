@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php echo link_tag('css/slick-team-slider.css')?>
 <?php echo link_tag('css/style.css')?>  
     
-  <title>Tempo | HTML5 Responsive Bootstrap Template</title>
+  <title>Creamos.la</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">  
   <?php echo link_tag('css/bootstrap.min.css')?> 
@@ -62,8 +62,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <!--li ><a href="#login">Login</a></li-->
 
                             <li ><a href="#contact">Contáctanos</a></li>
-                            <li ><a href="#about">Nuestro Equipo</a></li>
+                            <li ><a href="#equipo">Nuestro Equipo</a></li>
                             <!--li ><a href="#cursos">Cursos</a></li-->
+                            <li ><a href="#cursos">Cursos</a></li>
                             <li ><a href="#categorias">Categorias</a></li>
                             <li class="active"><a href="<?= base_url()?>">Inicio</a></li>  
                             <!-- formulario despleglable-->

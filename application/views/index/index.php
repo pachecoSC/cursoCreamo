@@ -29,7 +29,7 @@
         
             
 	<!--SERVICE START-->
-	<div id="service" class="section-padding">
+	<div id="categorias" class="section-padding">
 		<div class="container">
 			<div class="row">
                             <div class="text-right">
@@ -72,7 +72,7 @@
 	<!--SERVICE END-->
 
 	<!--PORTFOLIO START-->
-	<div id="portfolio" class="section-padding">
+	<div id="cursos" class="section-padding">
 		<div class="container">
 			<div class="row">
 				<div class="page-title text-center">
@@ -112,7 +112,7 @@
 	<!--PORTFOLIO END-->
 
 	<!--TEAM START-->
-	<div id="about" class="section-padding">
+	<div id="equipo" class="section-padding">
 		<div class="container">
 			<div class="row">
 				<div class="page-title text-center">
