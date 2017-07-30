@@ -49,21 +49,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'controlador_index';
+$route['default_controller'] = 'Controlador_index';
 $route['404_override'] = '';
 
 //$route['']='';  sintaxis limpia..
 //menu principal
-$route['menu-principal']='controlador_index';
+$route['menu-principal']='Controlador_index';
 //direccion de cursos
 $route['lista-de-cursos']= 'Controlador_curso/index';
 $route['formulario-de-cursos'] ='Controlador_curso/nuevo';
 $route['guardarCurso']='Controlador_curso/guardarCurso';
 
 //direccion de usuarios
-$route['formulario-de-usuarios']= 'controlador_usuario/nuevo';
-$route['guardarUsuario']='controlador_usuario/guardarUsuario';
-$route['lista-de-usuarios']='controlador_usuario/index';
+$route['formulario-de-usuarios']= 'Controlador_usuario/nuevo';
+$route['guardarUsuario']='Controlador_usuario/guardarUsuario';
+$route['lista-de-usuarios']='Controlador_usuario/index';
 
 //direccion de profesores
 $route['formulario-de-profesores']='Controlador_profesor/nuevo';
@@ -75,5 +75,3 @@ $route['formulario-de-categorias']='Controlador_categoria/nuevo';
 $route['lista-de-categorias']='Controlador_categoria/index';
 $route['guardarCategoria']='Controlador_categoria/guardarCategoria';
 //$route['translate_uri_dashes'] = FALSE;
-
-

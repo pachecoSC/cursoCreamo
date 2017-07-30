@@ -6757,3 +6757,51 @@ button.close {
     display: none !important;
   }
 }
+/*
+nuevos estilos 
+*/
+.my-content {
+    padding: 100px 0 170px 0;
+}
+.my-content .mydescription {
+    margin: 20px 0 10px 0;
+}
+.my-content .mydescription p { 
+    opacity: 0.8; 
+}
+.myform-cont {
+    margin-top: 35px;
+}
+.myform-top {
+    overflow: hidden;
+    padding: 0 25px 15px 25px;
+    /*background: rgba(0, 0, 0, 0.35);*/
+    -moz-border-radius: 10px 10px 0 0; 
+    -webkit-border-radius: 10px 10px 0 0; 
+    border-radius: 10px 10px 0 0;
+    
+}
+.myform-top-left { 
+    float: left;
+    width: 75%;
+    padding-top: 25px;
+    text-align: left;
+}
+.myform-top-left p { 
+    opacity: 0.8; 
+}
+.myform-top-right {
+    float: right;
+    width: 25%;
+    padding-top: 25px;
+    font-size: 66px;
+    text-align: right;
+    opacity: 0.5;
+}
+.myform-bottom {
+    padding: 25px 25px 30px 25px;
+    /*background:#99ccff;*/
+    -moz-border-radius: 0 0 10px 10px; 
+    -webkit-border-radius: 0 0 10px 10px; 
+    border-radius: 0 0 10px 10px;
+}

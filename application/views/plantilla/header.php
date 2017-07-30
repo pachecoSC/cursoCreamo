@@ -1,10 +1,3 @@
-<?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
@@ -22,6 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php echo link_tag('css/font-awesome.min.css')?>
 <?php echo link_tag('css/slick-team-slider.css')?>
 <?php echo link_tag('css/style.css')?>  
+<?php echo link_tag('css/bootstrap.css')?>    
     
   <title>Creamos.la</title>
   <meta charset="utf-8">
@@ -60,27 +54,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="collapse navbar-collapse" id="myNavbar">
 			  <ul class="nav navbar-nav navbar-right">
                             <!--li ><a href="#login">Login</a></li-->
-
-                            <li ><a href="#contact">Contáctanos</a></li>
-                            <li ><a href="#equipo">Nuestro Equipo</a></li>
-                            <!--li ><a href="#cursos">Cursos</a></li-->
-                            <li ><a href="#cursos">Cursos</a></li>
+                            <li class="active"><a href="<?= base_url()?>">Inicio</a></li>
                             <li ><a href="#categorias">Categorias</a></li>
-                            <li class="active"><a href="<?= base_url()?>">Inicio</a></li>  
+                            <li ><a href="#cursos">Cursos</a></li>
+                            <li ><a href="#equipo">Nuestro Equipo</a></li>
+                            <li ><a href="#contact">Contáctanos</a></li>
                             <!-- formulario despleglable-->
                             <?php if($this->session->userdata('login')) {?>
-                                <li>
-                                <p><?php echo $this->session->userdata('email'); ?></p><!-- devuelve el email del usuario -->
-                                </li>
-                                <li>
-                                    <a href="<?= base_url();?>controlador_login/logout/">Cerrar session</a><!-- muestra boton para cerrar la sesion-->
-                                </li>
-                                <?php if($this->session->userdata('cargo')=="1"){ ?>
-                                <li>
-                                    <a href="<?= base_url();?>controlador_index/mantenimiento/">Mantenimiento</a><!-- muestra menu solo administrador-->
-                                </li>
-                                <?php }?>
-                            <?php }else{ ?>
+                            <li>
+                            <?php echo $this->session->userdata('email'); ?><!-- devuelve el email del usuario -->
+                            </li>
+                            <li>
+                            <a href="<?= base_url();?>controlador_login/logout/">Cerrar session</a><!-- muestra boton para cerrar la sesion-->
+                            </li>
+                            <?php if($this->session->userdata('cargo')=='1'){ ?>
+                            <li>
+                            <a href="<?= base_url();?>controlador_index/mantenimiento/">Mantenimiento</a><!-- muestra menu solo administrador-->
+                            </li>
+                            <?php }
+                            }else{ ?>
                                 <li class='dropdown'>
                                 <a class='dropdown-toggle' href='#' data-toggle='dropdown' style="background: none;">INICIAR SESION ... <strong class='caret'></strong></a>
                                 <div class='dropdown-menu' style='padding: 10px; padding-bottom: 0px; background: none; width: 400px;'>
@@ -93,13 +85,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </div>
                                 <div class='form-group'>
                                         <button class='btn btn-primary' style='width: 380px;' type='submit'>INGRESAR</button>
-                                        <a class='btn btn-success' style='width: 380px;' type='submit' href="formulario-de-usuarios"> REGISTRARSE</a>
+                                        <a class='btn btn-success' style='width: 380px;' type='submit' href="<?= base_url();?>Controlador_usuario/nuevo"> REGISTRARSE</a>
                                 </div>
                                 </form>
                                 </div>
                                 </li>
                             <?php }?>
-
 			  </ul>
 			</div>
 		  </div>

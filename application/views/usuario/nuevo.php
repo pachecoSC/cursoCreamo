@@ -1,57 +1,66 @@
 <?php $this->load->view('plantilla/header');?>
-
-<br><br><br><br><br><br>
-
-    
-<center><h1>Nuevo Personal</h1>
-    <div class="container"><table class="table table-hover">
-            <form action="guardarUsuario" method="POST">
-                <tr>
-                    <td>Email: </td>
-                    <td><input type="text" name="txtEmail"/></td>
-                </tr>
-                <tr>
-                    <td>Password: </td>
-                    <td><input type="password" name="txtPassword" </td>
-                </tr>
-                <tr>
-                    <td>Nombre: </td>
-                    <td><input type="text" name="txtNombre"</td>
-                </tr>
-                <tr>
-                    <td>Apellidos: </td>
-                    <td><input type="text" name="txtApellido"</td>
-                </tr>
-                <tr>
-                    <td>Telefono: </td>
-                    <td><input type="text" name="txtTelefono" maxlength="9"></td>
-                </tr>
-                <!-- solo aparece para modificar en el caso de sesion activa de administrador -->
-                <?php if($this->session->userdata('login')){ ?>
-                    <tr>
-                        <td>Cargo: </td>
-                        <td><input type="text" name="txtCargo" ></td>
-                    </tr>
-                <?php } else {?>
-                    <tr>
-                        <td colspan="2"><center><input type="hidden" name="txtCargo" value="3"></center></td>
+<div class="my-content" >
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 myform-cont" >
+            <div class="myform-top">
+                <div class="myform-top-left">
+                    <h3>Regístrate en nuestro sitio.</h3>
+                    <p>Por favor ingresa tus datos personales:</p>
+                </div>
+                <div class="myform-top-right">
+                    <i class="fa fa-user-o"></i>
+                </div>
+            </div>
+            <div class="myform-bottom">
+                <form role="form" action="guardarUsuario" method="post" class="">
+                    <div class="form-group ">
+                        <label class="myform-top-left" >Nombre: </label>
+                        <input type="text" name="txtNombre" placeholder="Nombres..." class="form-control" id="nombreUsuario">
+                    </div>
+                    <div class="form-group">
+                        <label class="myform-top-left" >Apellido: </label>
+                        <input type="text" name="txtApellido" placeholder="Apellidos..." class="form-control" id="apellidoUsuario">
+                    </div>
+                    <div class="form-group">
+                        <label class="myform-top-left" >Email: </label>
+                        <input type="text" name="txtEmail" placeholder="Email@ejemplo.com" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label class="myform-top-left" >Contraseña: </label>
+                        <input type="password" name="txtPassword" placeholder="****" class="form-control" id="password">
+                    </div>
+                    <div class="form-group">
+                        <label class="myform-top-left" >Telefono: </label>
+                        <input type="text" name="txtTelefono" placeholder="#########" class="form-control" maxlength="9">
+                    </div>
                     
-                <?php } ?>
-                <!-- id ASistencia nulo y estado personal true o 1-- eliminar
-                -->
-                
-                    <!--<td> estado </td>-->
-                    <td colspan="2"><input type="hidden" name="txtEstado" value="1"></td>
-                </tr>
-                
-                <tr>
-                    <td colspan="2"><center><input type="submit" class=" btn btn-primary" value="Guardar"/>
-                    &nbsp;&nbsp;<a type="submit"  class="btn btn-danger" href="menu-principal">Cancelar</a> </center></td>
+                    <!-- solo aparece para modificar en el caso de sesion activa de administrador -->
+                    <?php if ($this->session->userdata('cargo')==1) { ?>
+                    <div class="form-group">
+                        <label class="myform-top-left" >Cargo: </label>
+                        <select id="tipo_usuario" name="txtCargo" class="form-control">
+                            <option value='1'>Administrador</option>
+                            <option value='2'>Colaborador</option>
+                            <option value='3'>Cliente</option>                
+                        </select>
+                    </div>
+                    <?php } else { ?>
+                    <div class="form-group"><input type="hidden" name="txtCargo" value="3"></div>
+                    <?php } ?>
+                    <!--<td> estado los activos siempre tendran uno.. al despedir cambia a 0</td>-->
+                    <input type="hidden" name="txtEstado" value="1">
                     
-                </tr>
-        </form>
-    </table></div>
+                    <div class="form-group col-sm-offset-4">
+                        <input type="submit" class=" btn btn-primary" value="Guardar"/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a type="submit"  class="btn btn-danger" href="<?= base_url();?>Controlador_index">Cancelar</a> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
     
-</center>
 
 <?php $this->load->view('plantilla/footer');?>

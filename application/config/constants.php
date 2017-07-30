@@ -98,7 +98,7 @@ if( isset ($_SERVER['HTTP_HOST'])){
         $base_uri .= '/';
     }
 }else{
-    $base_url='http://localhost/';
+    $base_url='http://creamos.la/creamos/';
     $base_uri='/';
 }
 //define esTos valores a usar despues en 

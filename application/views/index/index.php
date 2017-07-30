@@ -29,7 +29,7 @@
         
             
 	<!--SERVICE START-->
-	<div id="categorias" class="section-padding">
+	<div id="service" class="section-padding">
 		<div class="container">
 			<div class="row">
                             <div class="text-right">
@@ -72,7 +72,7 @@
 	<!--SERVICE END-->
 
 	<!--PORTFOLIO START-->
-	<div id="cursos" class="section-padding">
+	<div id="portfolio" class="section-padding">
 		<div class="container">
 			<div class="row">
 				<div class="page-title text-center">
@@ -112,7 +112,7 @@
 	<!--PORTFOLIO END-->
 
 	<!--TEAM START-->
-	<div id="equipo" class="section-padding">
+	<div id="about" class="section-padding">
 		<div class="container">
 			<div class="row">
 				<div class="page-title text-center">
@@ -157,7 +157,42 @@
 							</div>
 						</div>
 					</div>
-					
+					<div class="col-md-6">
+						<div class="team-info">
+							<div class="img-sec">
+								<img src="img/agent3.jpg" class="img-responsive">
+							</div>
+							<div class="fig-caption">
+								<h3>Iain Dante</h3>
+								<p class="marb-20">Jr. UI Designer</p>
+								<p>Follow me:</p>
+								<ul class="team-social">
+									<li class="blue-dark"><a href="#"><i class="fa fa-facebook"></i></a></li>
+								    <li class="red"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								    <li class="blue-light"><a href="#"><i class="fa fa-twitter"></i></a></li>
+								    <li class="blue-dark"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="team-info">
+							<div class="img-sec">
+								<img src="img/agent4.jpg" class="img-responsive">
+							</div>
+							<div class="fig-caption">
+								<h3>Kate Haris</h3>
+								<p class="marb-20">Jr. UI Designer</p>
+								<p>Follow me:</p>
+								<ul class="team-social">
+									<li class="blue-dark"><a href="#"><i class="fa fa-facebook"></i></a></li>
+								    <li class="red"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								    <li class="blue-light"><a href="#"><i class="fa fa-twitter"></i></a></li>
+								    <li class="blue-dark"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

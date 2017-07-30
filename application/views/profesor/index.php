@@ -27,7 +27,7 @@
                 <td><?php echo $item->especialidad;?></td>
                 <td><?php echo $item->descripcion_profesor;?></td>
                 <td><?php echo $item->telefono;?></td>
-                <td><img src="<?= base_url().'img/'.$item->foto_profesor;?>"></td>
+                <td><img src="<?= base_url().'img/profesores/'.$item->foto_profesor;?>"></td>
                 <!--<td><?php //$aux= $item->id_profesor?> </td> usada para guardar el ID y luego usarlo para modificar.-->
             </tr>
             <?php        endforeach;
