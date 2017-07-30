@@ -56,9 +56,9 @@ $route['404_override'] = '';
 //menu principal
 $route['menu-principal']='controlador_index';
 //direccion de cursos
-$route['lista-de-cursos']= 'controlador_curso/index';
-$route['formulario-de-cursos'] ='controlador_curso/nuevo';
-$route['guardarCurso']='controlador_curso/guardarCurso';
+$route['lista-de-cursos']= 'Controlador_curso/index';
+$route['formulario-de-cursos'] ='Controlador_curso/nuevo';
+$route['guardarCurso']='Controlador_curso/guardarCurso';
 
 //direccion de usuarios
 $route['formulario-de-usuarios']= 'controlador_usuario/nuevo';
@@ -66,14 +66,14 @@ $route['guardarUsuario']='controlador_usuario/guardarUsuario';
 $route['lista-de-usuarios']='controlador_usuario/index';
 
 //direccion de profesores
-$route['formulario-de-profesores']='controlador_profesor/nuevo';
-$route['lista-de-profesores']='controlador_profesor/index';
-$route['guardarProfesor']='controlador_profesor/guardarProfesor';
+$route['formulario-de-profesores']='Controlador_profesor/nuevo';
+$route['lista-de-profesores']='Controlador_profesor/index';
+$route['guardarProfesor']='Controlador_profesor/guardarProfesor';
 
 //direcciones de categorias
-$route['formulario-de-categorias']='controlador_categoria/nuevo';
-$route['lista-de-categorias']='controlador_categoria/index';
-$route['guardarCategoria']='controlador_categoria/guardarCategoria';
+$route['formulario-de-categorias']='Controlador_categoria/nuevo';
+$route['lista-de-categorias']='Controlador_categoria/index';
+$route['guardarCategoria']='Controlador_categoria/guardarCategoria';
 //$route['translate_uri_dashes'] = FALSE;
 
 

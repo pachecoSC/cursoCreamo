@@ -45,4 +45,5 @@
     <p><?php
     $url8= url_title('Lista de Categorias','-',TRUE);
     echo anchor($url8,'ver Categorias');?></p>
+    
 <?php $this->load->view('plantilla/footer');?>
