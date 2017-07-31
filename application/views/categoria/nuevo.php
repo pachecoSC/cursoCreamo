@@ -1,34 +1,44 @@
 <?php $this->load->view('plantilla/header');?>
 
-<br><br><br><br><br><br>
+<div class="my-content" >
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 myform-cont" >
+            <div class="myform-top">
+                <div class="myform-top-left">
+                    <h3>Nueva Categoria.</h3>
+                    <p>Por favor ingresa datos:</p>
+                    <?php
+                    echo $error;
+                    ?>
+                </div>
+                <div class="myform-top-right">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+            <div class="myform-bottom">
+                <form action="<?= base_url();?>Controlador_categoria/guardarCategoria" enctype="multipart/form-data" method="post">
+                    <div class="form-group ">
+                        <label class="myform-top-left" >Nombre: </label>
+                        <input type="text" name="txtNombre" placeholder="ingresar categoria." class="form-control" id="nombreCategoria">
+                    </div>
+                    <div class="form-group">
+                        <label class="myform-top-left" >Foto de categoria: </label>
+                        <input type="file" name="foto_categoria">
+                    </div>
+                    <div class="form-group">
+                        <label class="myform-top-left" >Descripcion: </label>
+                        <input type="text" name="txtDecripcion" placeholder="pequeña descripion.." class="form-control" id="email">
+                    </div>
+                    <div class="form-group col-sm-offset-4">
+                        <input type="submit" class=" btn btn-primary" value="Guardar"/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a type="submit"  class="btn btn-danger" href="<?= base_url();?>Controlador_Index">Cancelar</a> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 
-<center><h1>Nueva Categoria</h1>
-    <div class="container"><table class="table table-hover">
-            <?php
-                echo $error;
-            ?>
-            <form action="guardarCategoria" enctype="multipart/form-data" method="post">
-            
-                <tr>
-                    <td>Nombre: </td>
-                    <td><input type="text" name="txtNombre"/></td>
-                <tr>
-                    <td>Imagen de categoria: </td>
-                    <td><input type="file" name="foto_categoria"></td>
-                </tr> 
-                <tr>
-                    <td>Descripcion: </td>
-                    <td><input type="text" name="txtDecripcion"/></td>
-                <tr>
-                <tr>
-                    <td colspan="2"><center><input type="submit" class=" btn btn-primary" value="Guardar"/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a type="submit"  class="btn btn-danger" href="menu-principal">Cancelar</a> </center></td>
-
-                     </center></td>
-                </tr>
-            </form>
-            
-    </table></div>
-    
 <?php $this->load->view('plantilla/footer'); ?>

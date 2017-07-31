@@ -1,34 +1,45 @@
 <?php $this->load->view('plantilla/header');?>
 
-<br><br><br><br><br><br>
-
-    <center><h1>Actualizar Personal</h1>
-    <div class="container"><table class="table table-hover">
-            <form action="<?= base_url() . 'controlador_usuario/actualizar/' . $usu->id_usuario;?>" method="POST">
-                <tr>
-                    <td>Email: </td>
-                    <td><input type="text" name="txtEmail" value="<?php echo $usu->email?>"/></td>
-                </tr>
-                <tr>
-                    <td>Password: </td>
-                    <td><input type="text" name="txtPassword" value="<?php echo $usu->password?>"</td>
-                </tr>
-                <tr>
-                    <td>Nombre: </td>
-                    <td><input type="text" name="txtNombre" value="<?php echo $usu->nombre_usuario?>"</td>
-                </tr>
-                <tr>
-                    <td>Apellidos: </td>
-                    <td><input type="text" name="txtApellido" value="<?php echo $usu->apellidos?>"</td>
-                </tr>
-                <tr>
-                    <td>Telefono: </td>
-                    <td><input type="text" name="txtTelefono" maxlength="9" value="<?php echo $usu->telefono?>"></td>
-                </tr>
-                <tr>
-                    <td>Cargo: </td>
-                    <!--td><input type="text" name="txtCargo" value="<?php echo $usu->tipo_usuario?>"></td-->
-                    <td><select id="tipo_usuario" name="txtCargo" class="form-control">
+<div class="my-content" >
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 myform-cont" >
+            <div class="myform-top">
+                <div class="myform-top-left">
+                    <h3>Actualizar datos de usuarios.</h3>
+                    <p>Por favor ingresa tus nuevos datos personales:</p>
+                </div>
+                <div class="myform-top-right">
+                    <i class="fa fa-user-o"></i>
+                </div>
+            </div>
+            <div class="myform-bottom">
+                <form role="form" action="<?= base_url() . 'controlador_usuario/actualizar/' . $usu->id_usuario;?>" method="post">
+                    <div class="form-group ">
+                        <label class="myform-top-left" >Nombre: </label>
+                        <input type="text" name="txtNombre" class="form-control" id="nombreUsuario" value="<?php echo $usu->nombre_usuario?>">
+                    </div>
+                    <div class="form-group">
+                        <label class="myform-top-left" >Apellido: </label>
+                        <input type="text" name="txtApellido"class="form-control" id="apellidoUsuario" value="<?php echo $usu->apellidos?>">
+                    </div>
+                    <div class="form-group">
+                        <label class="myform-top-left" >Email: </label>
+                        <input type="text" name="txtEmail" class="form-control" id="email" value="<?php echo $usu->email?>">
+                    </div>
+                    <div class="form-group">
+                        <label class="myform-top-left" >Contraseña: </label>
+                        <input type="password" name="txtPassword" class="form-control" id="password" value="<?php echo $usu->password?>">
+                    </div>
+                    <div class="form-group">
+                        <label class="myform-top-left" >Telefono: </label>
+                        <input type="text" name="txtTelefono" class="form-control" maxlength="9" value="<?php echo $usu->telefono?>">
+                    </div>
+                    
+                    <!-- solo aparece para modificar en el caso de sesion activa de administrador -->
+                    <?php if ($this->session->userdata('cargo')==1) { ?>
+                    <div class="form-group">
+                        <label class="myform-top-left" >Cargo: </label>
+                        <select id="tipo_usuario" name="txtCargo" class="form-control">
                             <option value="<?php if($usu->tipo_usuario=='1') 
                             {?>">Administrador</option>
                             <option value='2'>Colaborador</option>
@@ -42,24 +53,24 @@
                             <option value='1'>Administrador</option>
                             <option value='2'>Colaborador</option>         
                             <?php } ?>                            
-                        </select></td>
-                </tr>
-                <!-- id ASistencia nulo y estado personal true o 1-- eliminar
-                -->
-                <tr>
-                    <!--<td> estado </td>-->
-                    <td colspan="2"><input type="hidden" name="txtEstado" value="<?php echo $usu->estado_usuario?>"></td>
-                </tr>
-                
-                <tr>
+                        </select>
+                    </div>
+                    <?php } else { ?>
+                    <div class="form-group"><input type="hidden" name="txtCargo" value="3"></div>
+                    <?php } ?>
+                    <!--<td> estado los activos siempre tendran uno.. al despedir cambia a 0</td>-->
+                    <input type="hidden" name="txtEstado" value="<?php echo $usu->estado_usuario?>">
                     
-                    <td colspan="2"><center><input type="submit" class=" btn btn-primary" value="Guardar"/>
-                    &nbsp;&nbsp;<a type="submit"  class="btn btn-danger" href= "<?=base_url()?>controlador_usuario/">Cancelar</a> </center></td>
-                    
-                </tr>
-        </form>
-    </table></div>
-    
-</center>
-    
+                    <div class="form-group col-sm-offset-4">
+                        <input type="submit" class=" btn btn-primary" value="Guardar"/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a type="submit"  class="btn btn-danger" href= "<?=base_url()?>controlador_usuario/">Cancelar</a> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
 <?php $this->load->view('plantilla/footer');?>

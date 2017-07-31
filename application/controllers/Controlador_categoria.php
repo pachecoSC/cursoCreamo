@@ -8,7 +8,6 @@
 class Controlador_categoria extends CI_Controller{
     public function __construct() {
         parent::__construct();
-        $this->load->library('upload');
         $this->load->model('Modelo_categoria');
         
     }
@@ -24,7 +23,7 @@ class Controlador_categoria extends CI_Controller{
     }
     //meotodo recive de boton de formulario y envia a modelo
     public function guardarCategoria(){//http://www.creamos.la/creamos/
-                 $config=["upload_path"=>base_url()."img/categoria/",
+                 $config=["upload_path"=>"./img/categoria/",
                      'allowed_types'=>"png|jpg|jpeg|gif"];
                  $this->load->library("upload",$config);
                  if($this->upload->do_upload('foto_categoria') ){

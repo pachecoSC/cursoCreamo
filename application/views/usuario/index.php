@@ -1,6 +1,8 @@
-<?php $this->load->view('plantilla/header');?>
+ <?php $this->load->view('plantilla/header');?>
 
-<br><br><br><br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
 
 <center>
     <h1>Lista de Usuarios</h1>
@@ -60,12 +62,6 @@
 
 
         </table></div>
-</center>
-<center>
-    <?php 
-    $url = url_title('Menu Principal','-',TRUE);
-    ?><h1><?php echo anchor($url,'volver Menu')?></h1>
-    
 </center>
 
 <?php $this->load->view('plantilla/footer');?>
