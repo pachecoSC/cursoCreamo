@@ -11,6 +11,9 @@ link & button
 li-float{
     float: right;
 }
+.divblock{
+    display: block;
+}
 .navbar-brand-style
 {
     position: absolute;

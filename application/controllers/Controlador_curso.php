@@ -40,7 +40,7 @@ class Controlador_curso extends CI_Controller{
          //$this->load->view('curso/nuevo',$datoprofesor);
     }
     public function guardarCurso(){
-        $config=["upload_path"=>base_url()."img/cursos/",'allowed_types'=>"png|jpg|jpeg|gif"];
+        $config=["upload_path"=>"./img/cursos/",'allowed_types'=>"png|jpg|jpeg|gif"];
         $this->load->library("upload",$config);
         
         if($this->upload->do_upload('foto_curso')){$data=array("upload_data"=> $this->upload->data());

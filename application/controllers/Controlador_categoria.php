@@ -22,16 +22,15 @@ class Controlador_categoria extends CI_Controller{
         $this->load->view('categoria/index',$datos);
     }
     //meotodo recive de boton de formulario y envia a modelo
-    public function guardarCategoria(){//http://www.creamos.la/creamos/
-                 $config=["upload_path"=>"./img/categoria/",
-                     'allowed_types'=>"png|jpg|jpeg|gif"];
+    public function guardarCategoria(){
+                 $config=["upload_path"=>"./img/folder",'allowed_types'=>"png|jpg|jpeg|gif"];
                  $this->load->library("upload",$config);
                  if($this->upload->do_upload('foto_categoria') ){
                      $data=array("upload_data" => $this->upload->data());
                      
                      $paramCategoria['nombre_categoria']= $this->input->post('txtNombre');
                     $paramCategoria['foto_categoria']= $data['upload_data']['file_name'];
-                    $paramCategoria['descripcion_categoria']= $this->input->post('txtDecripcion');
+                    $paramCategoria['descripcion_categoria']= $this->input->post['txtDescripcion'];
                     $this->Modelo_categoria->insertarCategoria($paramCategoria);
                     $datos['categorias']= $this->Modelo_categoria->listarCategoria();
                     $this->load->view('categoria/index',$datos);
@@ -39,6 +38,7 @@ class Controlador_categoria extends CI_Controller{
                      $error = array('error'=>$this->upload->display_errors());
 
                      $this->load->view('categoria/nuevo',$error);
+                     
                  }
     }
     

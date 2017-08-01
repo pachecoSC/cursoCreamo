@@ -1,7 +1,7 @@
 
 
 	<!--BANNER START-->
-        <div id="banner" class="section-padding" style="background: url('<?php echo base_url();?>img/banner-bg.jpg') no-repeat">
+        <div id="banner" class="section-padding" style="background: url('<?php echo base_url();?>img/creamos_banner.jpg') no-repeat">
 		<div class="container">
 			<div class="row">
 				<div class="jumbotron">
@@ -28,8 +28,8 @@
        
         
             
-	<!--SERVICE START-->
-	<div id="service" class="section-padding">
+	<!--START DIV CATEGORIAS-->
+	<div id="categorias" class="section-padding">
 		<div class="container">
 			<div class="row">
                             <div class="text-right">
@@ -38,40 +38,37 @@
                                 <?php } ?>
                             </div>
 				<div class="page-title text-center">
-					<h1>Nuestros Cursos</h1>
-					<p>Todos nuestros cursos disponibles en diferentes categorias</p>
-					<hr class="pg-titl-bdr-btm"></hr>
-                                        
-				</div>
-                                
+					<h1>CATEGORIAS</h1>
+                                        <p>CATEGORIAS DE  <ENF>CURSOS</ENF> DISPONIBLES</p>
+					<hr class="pg-titl-bdr-btm"></hr>                                        
+				</div>                                
                             <?php 
                             if ($categorias != FALSE){
                             foreach ($categorias as $item):
                             ?>
 				<div class="col-md-4">
 					<div class="service-box">
-						<div class="service-text">
-                                                    <p><img class="responsive" src="<?= base_url().'img/categoria/'. $item->foto_categoria; ?>"></p>
+                                            <div class="service-text divblock">
+                                                    <div><img class="responsive" src="<?= base_url().'img/categoria/'. $item->foto_categoria; ?>"></div>
                                                     <center><h3><?Php echo $item->nombre_categoria;?>&nbsp;&nbsp;
                                                     <a href="<?= base_url().'controlador_categoria/verCursos/'.$item->nombre_categoria;?>">
                                                     <i class="fa fa-angle-double-right fa-lg" aria-hidden="true"></i></a> 
                                                     </h3></center>
                                                     &nbsp;&nbsp;&nbsp;
-						</div>
+                                            </div>
 					</div>
 				</div>
                             <?php        endforeach;
                             }else{
                                 echo "No se encuentran datos";
                             }
-                            ?>
-				
+                            ?>				
 			</div>
 		</div>
 	</div>
-	<!--SERVICE END-->
+	<!--END DIV CATEGORIAS-->
 
-	<!--PORTFOLIO START-->
+	<!--START DIV NOSOTROS-->
 	<div id="portfolio" class="section-padding">
 		<div class="container">
 			<div class="row">
@@ -109,7 +106,7 @@
 			</div>
 		</div>
 	</div>
-	<!--PORTFOLIO END-->
+	<!--END DIV NOSOTROS    -->
 
 	<!--TEAM START-->
 	<div id="about" class="section-padding">
