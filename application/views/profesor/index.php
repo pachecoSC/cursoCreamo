@@ -31,11 +31,11 @@
                 <td><?php echo $item->telefono;?></td>
                 
                 <td>
-                     <a type="button" href="<?= base_url()?>Controlador_profesor/editar/<?php echo $item->id_profesor;?>" class="btn btn-success" >
+                    <a type="button" href="<?= base_url() ?>Controlador_profesor/editar/<?php echo $item->id_profesor; ?>" class="btn btn-success" >
                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modificar</a> 
-                        &nbsp;&nbsp;
-                        <a type="button" href="<?= base_url()?>Controlador_profesor/eliminar/<?php echo $item->id_profesor;?>" class="btn btn-danger" >
-                            <i class="fa fa-trash-o" aria-hidden="true"></i></i>Despedir</a>
+                    &nbsp;&nbsp;
+                    <a type="button" href="<?= base_url() ?>Controlador_profesor/eliminar/<?php echo $item->id_profesor; ?>" class="btn btn-danger" >
+                        <i class="fa fa-trash-o" aria-hidden="true"></i></i>Despedir</a>
                 </td>
                 
             </tr>

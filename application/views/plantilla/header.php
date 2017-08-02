@@ -1,9 +1,16 @@
+
 <?PHP defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="en" class=" js no-touch">
 <head>
 
+    <style type="text/css">
+        font{
+            color: #3366ff;
+            font-size: 18px;
+        }
+    </style>
 <?php echo link_tag('css/bootstrap.min.css')?>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />    
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Raleway:600,300|Josefin+Slab:400,700,600italic,600,400italic' rel='stylesheet' type='text/css'>

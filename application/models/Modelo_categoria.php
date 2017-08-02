@@ -20,23 +20,14 @@ class Modelo_categoria extends CI_Model{
             return FALSE;
         }
     }
-    function obtenerCategoria($id){
-        $this->db->where('id_categoria_curso',$id);
-        $consulta = $this->db->get('categoria_curso');
-        if ($consulta->num_rows() > 0) {
-            return $consulta->result();
-        }else{
-            return FALSE;
-        }
-    }
     
     function insertarCategoria($paramCategoria){
-        $campoCategoria= array(
-            'nombre_categoria'=>$paramCategoria['nombre_categoria'],
-            'foto_categoria'=>$paramCategoria['foto_categoria'],
-            'descripcion_categoria'=>$paramCategoria['descripcion_categoria']
-            );
-            $this->db->insert('categoria_curso',$campoCategoria);
+        $campoCategoria = array(
+            'nombre_categoria' => $paramCategoria['nombre_categoria'],
+            'foto_categoria' => $paramCategoria['foto_categoria'],
+            'descripcion_categoria' => $paramCategoria['descripcion_categoria']
+        );
+        $this->db->insert('categoria_curso', $campoCategoria);
     }
     
     function listarCursos($ida){
@@ -53,6 +44,28 @@ class Modelo_categoria extends CI_Model{
         }else{
             return FALSE;
         }
+    }
+    function obtenerCategoria($id){
+        $this->db->where('id_categoria_curso',$id);
+        $consulta= $this->db->get('categoria_curso');
+        if($consulta->num_rows()>0){
+            return $consulta->row();
+        } else {
+            return NULL;
+        }
+    }
     
+    function actualizarCategoria($id,$paramCategoria){
+        $campoCategoria = array(
+            'nombre_categoria' => $paramCategoria['nombre_categoria'],
+            'foto_categoria' => $paramCategoria['foto_categoria'],
+            'descripcion_categoria' => $paramCategoria['descripcion_categoria']
+        );
+       $this->db->where('id_categoria_curso',$id);
+       $this->db->update('categoria_curso', $campoCategoria);
+    }
+    function eliminarCategoria($id){
+        $this->db->where('id_categoria_curso',$id);
+        $this->db->delete('categoria_curso');
     }
 }

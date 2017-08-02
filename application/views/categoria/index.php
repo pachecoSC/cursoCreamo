@@ -9,7 +9,7 @@
                 <td><font>Nombre</font></td>
                 <td><font>Foto</font></td>
                 <td><font>Descripcion</font></td>
-                <td><font>Ver Cursos</font></td>
+                <td><font>Opciones</font></td>
  
             </tr>    
             <!-- @var $usuarios viene del controlador usuario
@@ -20,14 +20,17 @@
             if ($categorias != FALSE){
                 foreach ($categorias as $itemca):
             ?><tr>
-                <td><?Php echo $itemca->nombre_categoria;?></td>
                 <!-- envia la direccion completa . el nombre guardado en bd -->
                 <td><img src="<?= base_url().'img/categoria/'. $itemca->foto_categoria; ?>"></td>
+                <td><?Php echo $itemca->nombre_categoria;?></td>
                 <td><?Php echo $itemca->descripcion_categoria;?></td>
-                <td><a type="button" href="<?= base_url().'controlador_categoria/verCursos/'.$itemca->nombre_categoria;?>" class="btn btn-success" >
-                        <i class="fa fa-eye" aria-hidden="true"></i> Ver Cursos</a><td> 
-                <!--<td><? //$aux= $item->id_categoria_curso?> </td> usada para guardard><a type="button" href="<?= base_url().'controlador_categoria/verCursos/'.$itemca->nombre_categoria;?>" class="btn btn-success" >
-                        <i class="fa fa-eye" aria-hidden="true"></i> Ver Cursos</a><td> el ID y luego usarlo para modificar.-->
+                <td>
+                    <a type="button" href="<?= base_url() ?>Controlador_categoria/editar/<?php echo $itemca->id_categoria_curso; ?>" class="btn btn-success" >
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modificar</a> 
+                    &nbsp;&nbsp;
+                    <a type="button" href="<?= base_url() ?>Controlador_categoria/eliminar/<?php echo $itemca->id_categoria_curso; ?>" class="btn btn-danger" >
+                        <i class="fa fa-trash-o" aria-hidden="true"></i></i>Eliminar</a>
+                <td> 
             </tr>
             <?php        endforeach;
             }else{
