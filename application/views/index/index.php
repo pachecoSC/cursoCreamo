@@ -47,15 +47,13 @@
                             foreach ($categorias as $item):
                             ?>
 				<div class="col-md-4">
-					<div class="service-box">
-                                            <div class="service-text divblock">
-                                                    <div><img class="responsive" src="<?= base_url().'img/categoria/'. $item->foto_categoria; ?>"></div>
-                                                    <center><h3><?Php echo $item->nombre_categoria;?>&nbsp;&nbsp;
-                                                    <a href="<?= base_url().'controlador_categoria/verCursos/'.$item->nombre_categoria;?>">
-                                                    <i class="fa fa-angle-double-right fa-lg" aria-hidden="true"></i></a> 
-                                                    </h3></center>
-                                                    &nbsp;&nbsp;&nbsp;
-                                            </div>
+                                    <div class="gallery">
+                                            <a href="<?= base_url().'controlador_categoria/verCursos/'.$item->nombre_categoria;?>">
+                                            
+                                                    <img class="responsive" src="<?= base_url().'img/categoria/'. $item->foto_categoria; ?>">
+                                                    <div class="desc"><h3 class="center"><?Php echo $item->nombre_categoria;?>&nbsp;&nbsp;</h3></div>
+                                                                                               
+                                            </a>
 					</div>
 				</div>
                             <?php        endforeach;

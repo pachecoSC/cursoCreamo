@@ -1,42 +1,19 @@
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?PHP defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="en" class=" js no-touch">
 <head>
-  
-    <style type="text/css">
-        font{
-            color: #3366ff;
-            font-size: 18px;
-        }
-    </style>
-     
-<?php echo link_tag('css/bootstrap.min.css')?>  
-<?php echo link_tag('css/font-awesome.min.css')?>
+
+<?php echo link_tag('css/bootstrap.min.css')?>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />    
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Raleway:600,300|Josefin+Slab:400,700,600italic,600,400italic' rel='stylesheet' type='text/css'>
 <?php echo link_tag('css/slick-team-slider.css')?>
-<?php echo link_tag('css/style.css')?>  
-<?php echo link_tag('css/bootstrap.css')?>    
-    
+<?php echo link_tag('css/style.css')?>    
+<?php echo link_tag('css/estilo.css')?> 
   <title>Creamos.la</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">  
-  <?php echo link_tag('css/bootstrap.min.css')?> 
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-  <link rel=”stylesheet” href=”tucarpeta/css/font-awesome.min.css“>
-    <?php echo link_tag('css/slick-team-slider.css')?>
-    <?php echo link_tag('css/style.css')?>
-    <link rel=”stylesheet” href=”css/font-awesome.min.css“>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Raleway:600,300|Josefin+Slab:400,700,600italic,600,400italic' rel='stylesheet' type='text/css'>
- <!--<link rel="stylesheet" href="css/bootstrap.min.css">  
- <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
- <link rel="stylesheet" type="text/css" href="css/slick-team-slider.css"/>
- <link rel="stylesheet" type="text/css" href="css/style.css">-->
-  <!-- =======================================================
-        Theme Name: Tempo
-        Theme URL: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/
-        Author: BootstrapMade.com
-        Author URL: https://bootstrapmade.com
-    ======================================================= -->
+  
 </head>
 <body>
 	<!--HEADER START-->

@@ -8,23 +8,6 @@
 /**************************************
 link & button
 **************************************/
-li-float{
-    float: right;
-}
-.divblock{
-    display: block;
-}
-.navbar-brand-style
-{
-    position: absolute;
-    width: 200%;
-    left: 0;
-    text-align:left;
-    margin:0 auto;
-}
-.navbar-toggle-style {
-    z-index:3;
-}
 .white
 {
 	color:#fff !important;
@@ -96,28 +79,6 @@ Header
 .nav > li > a
 {
 	padding: 0px;
-}
-.nav-style{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    
-}
-.nav-style > li{
-    float: right;
-}
-.nav-style > li >a{
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-.nav-style > li > a:hover:not(.active){
-    background-color: fffff0;
-}
-.active{
-    background-color: fff;
 }
 .jumbotron
 {
@@ -217,7 +178,7 @@ a.btn-banner:hover, a.btn-banner:focus
 }
 .cta-1, .cta2
 {
-	background-color: #45639c;
+	background-color: #e43c5c;
 	padding: 40px 0px;
 }
 p.cta-sub-title
@@ -492,7 +453,7 @@ margin-top: 5px;
 }
 #banner
 {
-    /*background: url('img/banner-bg.jpg') no-repeat;*/
+    background: url('../img/banner-bg.jpg') no-repeat;
     background-size: cover;
     min-height: 500px;
 }
